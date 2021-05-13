@@ -24,7 +24,7 @@ require_once('./checkSession.php')
 <?php
   require_once('./db.connect.php');
   $sql = "SELECT `memberName`, `memberId`, `memberImg`  FROM `members` WHERE `memberAccount` = ?";  //memberAccount must be unique
-  $arrParam = array($_SESSION['username']);
+  $arrParam = array($_SESSION['memberAccount']);
 
   $stmt = $pdo->prepare($sql);
   $stmt->execute($arrParam);
