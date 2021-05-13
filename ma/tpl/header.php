@@ -62,7 +62,7 @@
             <a class="btn btn-outline-primary" href="./register.php">註冊</a>
         <?php } else { ?>
             <span><?php echo $_SESSION["name"] ?> 您好</span>
-            <a class="btn btn-outline-success my-0 ml-2" href="../logout.php">登出</a>
+            <a class="btn btn-outline-success my-0 ml-2" href="./logout.php">登出</a>
         <?php } ?>
     </div>
 
