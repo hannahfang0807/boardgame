@@ -1,6 +1,6 @@
 <?php
-require_once('./db.connect.php');
-// echo  $_POST['date'],
+  require_once('../db.inc.php');
+  // echo  $_POST['date'],
 // $_POST['startTime'],
 // $_POST['duration'],
 // $_POST['storeId'],
