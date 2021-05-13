@@ -10,14 +10,15 @@ require_once './db.inc.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>分店詳細頁</title>
+    <link rel="stylesheet" href="../index/css/style.css">
 </head>
 
 <body>
     <?php 
-    require_once '../../templates/html-header.php';
-    require_once '../../nav.php';
+    require_once '../../html-header.php';
+    require_once './nav.php';
     ?>
-    <div class="container-fluid">
+    <div class="container mt-5">
         <div class="col-md-9 col-sm-8 m-auto">
             <?php
             if (isset($_GET['storeId'])) {
