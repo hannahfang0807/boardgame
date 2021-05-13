@@ -5,12 +5,11 @@
         <div>
             <a class="p-2 text-dark font-weight-bold" href="./ma/itemList.php">商品一覽</a>
             <a class="p-2 text-dark font-weight-bold" href="./eleanor/reservations.php">預約</a>
-            <a class="p-2 text-dark font-weight-bold" href="./board.php">揪團留言板</a>
-            <a class="p-2 text-dark font-weight-bold" href="./xiaoyae/index.php">分店資訊</a>
-            <a class="p-2 text-dark font-weight-bold" href="./yo/board/homepage.php">管理員後台</a> 
+            <a class="p-2 text-dark font-weight-bold" href="./yo/board/homepage.php">揪團留言板</a>
+            <a class="p-2 text-dark font-weight-bold" href="./xiaoyae/index/index.php">分店資訊</a>
         </div>
         <div>
-            <a class="p-2 text-dark" href="./ma/myCart.php">
+            <a class="p-2 text-dark" href="./sophia/myCart.php">
                 <span>我的購物車</span>
                 (<span id="cartItemNum">
                 <?php 
