@@ -1,124 +1,146 @@
 <?php
-require_once ('./checkAdmin.php');
-require_once ('../db.inc.php');
-require_once ('../templates/admin-nav.php');
+require_once('./checkAdmin.php'); //引入登入判斷
+require_once('../db.inc.php'); //引用資料庫連線
 
-$sqlTotal = "SELECT count(1) AS `count` FROM `members`";
-$stmtTotal = $pdo->query($sqlTotal);
-$arrTotal = $stmtTotal->fetchAll()[0];
-$total = $arrTotal['count'];
 
-$numPerPage = 5;
-$totalPages = ceil($total/$numPerPage);
-$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-$page = $page < 1 ? 1 : $page;
+$sqlTotal = "SELECT count(1) FROM `items`"; //SQL 敘述
+$total = $pdo->query($sqlTotal)->fetch(PDO::FETCH_NUM)[0]; //取得總筆數
+$numPerPage = 10; //每頁幾筆
+$totalPages = ceil($total / $numPerPage); // 總頁數
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1; //目前第幾頁
+$page = $page < 1 ? 1 : $page; //若 page 小於 1，則回傳 1
 
+
+
+//商品種類 SQL 敘述
+$sqlTotalCatogories = "SELECT count(1) FROM `categories`";
+
+//取得商品種類總筆數
+$totalCatogories = $pdo->query($sqlTotalCatogories)->fetch(PDO::FETCH_NUM)[0];
 ?>
-<head>
-    <style>
-    .w200px {
-        width: 180px;
-    }
-    .mForm {
-        width:90%;
-        margin: 0 auto;
-    }
+<!DOCTYPYE html>
+    <html>
 
-    th {
-        min-height:50px;
-        min-width:50px;
-    }
-    </style>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <title>我的 PHP 程式</title>
+        <style>
+            .border {
+                border: 1px solid;
+            }
 
-<body>
-<div class="">
-    <h3 class="mt-5 mb-3 text-center">會員一覽</h3>
-    <form class="mForm" name="mForm" method="POST" action="">
-        <table class="table table-bordered">
-            <thead class="thead-dark">
-                <tr class=" text-center">
-                    <th class="border">編號</th>
-                    <th class="border">帳號</th>
-                    <th class="border">姓名</th>
-                    <th class="border">暱稱</th>
-                    <th class="border">大頭貼</th>
-                    <th class="border">性別</th>
-                    <th class="border">Email</th>
-                    <th class="border">手機號碼</th>
-                    <th class="border">生日</th>
-                    <th class="border">住址</th>
-                    <th class="border">功能</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                $sql = "SELECT `memberId`, `memberAccount`, `memberName`, `memberNickname`, `memberGender`, `memberEmail`, `memberPhone`, `memberImg`, `memberBirthday`, `memberAddress` 
-                        FROM `members`
-                        ORDER BY `memberId` ASC
-                        LIMIT ?, ?";
-                
-                $arrParam = [
-                    ($page - 1) * $numPerPage, 
-                    $numPerPage
-                ];
+            img.itemImg {
+                width: 250px;
+            }
+            .ellipsis {
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+        </style>
+    </head>
 
-                $stmt = $pdo->prepare($sql);
-                $stmt->execute($arrParam);
+    <body>
+        <?php require_once('./templates/title.php'); ?>
+        <hr />
+        <h3>商品列表</h3>
+        <?php
+        //若有建立商品種類，則顯示商品清單
+        if ($totalCatogories > 0) {
+        ?>
+            <form name="myForm" entype="multipart/form-data" method="POST" action="delete.php">
+                <table class="border">
+                    <thead>
+                        <tr>
+                            <th class="border">勾選</th>
+                            <th class="border">名稱</th>
+                            <th class="border">照片路徑</th>
+                            <th class="border">價格</th>
+                            <th class="border">數量</th>
+                            <th class="border">種類</th>
+                            <th class="border">新增時間</th>
+                            <th class="border">更新時間</th>
+                            <th class="border">功能</th>
+                            <th class="border">內容</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        //SQL 敘述
+                        $sql = "SELECT `items`.`itemId`, `items`.`itemName`, `items`.`itemImg`, `items`.`itemPrice`, 
+                        `items`.`itemQty`, `items`.`itemCategoryId`, `items`.`created_at`, `items`.`updated_at`,
+                        `categories`.`categoryName`,`items`.`itemDescription`
+                FROM `items` INNER JOIN `categories`
+                ON `items`.`itemCategoryId` = `categories`.`categoryId`
+                ORDER BY `items`.`itemId` ASC 
+                LIMIT ?, ? ";
 
-                if($stmt->rowCount() > 0) {
-                    $arr = $stmt->fetchAll();
-                    for($i = 0; $i < count($arr); $i++) {
-                    ?>
+                        //設定繫結值
+                        $arrParam = [($page - 1) * $numPerPage, $numPerPage];
 
-            <tr class=" text-center">    
-                <td class="border"><?php echo $arr[$i]['memberId'] ?></td>
-                <td class="border"><?php echo $arr[$i]['memberAccount'] ?></td>
-                <td class="border"><?php echo $arr[$i]['memberName'] ?></td>
-                <td class="border"><?php echo $arr[$i]['memberNickname'] ?></td>
-                <td class="border p-0">
-                <?php if($arr[$i]['memberImg'] !== NULL) { ?>
-                    <img class="w200px" src="../images/<?php echo $arr[$i]['memberImg'] ?>">
-                <?php } ?>
-                </td>
-                <td class="border"><?php echo $arr[$i]['memberGender'] ?></td>
-                <td class="border"><?php echo $arr[$i]['memberEmail'] ?></td>
-                <td class="border"><?php echo $arr[$i]['memberPhone'] ?></td>
-                <td class="border"><?php echo $arr[$i]['memberBirthday'] ?></td>
-                <td class="border"><?php echo $arr[$i]['memberAddress'] ?></td>
-                <td class="border">
-                    <a class="btn btn-primary" href="./edit.php?id=<?php echo $arr[$i]['memberId']; ?>">編輯</a>
-                    <a class="btn btn-danger" href="./delete.php?id=<?php echo $arr[$i]['memberId']; ?>">刪除</a>
-                </td>
-            </tr>
-                <?php
-                    }
-                } else {
-                ?>
-                    <tr>
-                        <td class="border" colspan="10">沒有資料</td>
-                    </tr>
-                <?php
-                }
-                ?>
-                
-            </tbody>
-            <tfoot>
-            <tr>
-                <td class="text-center" colspan="11">
-                <?php for($i = 1; $i <= $totalPages; $i++){ ?>
-                    <a class="btn btn-primary my-3 mx-1" href="?page=<?php echo $i ?>"><?php echo $i ?></a>
-                <?php } ?>
-                </td>
-            </tr>
-        </tfoot>
+                        //查詢分頁後的商品資料
+                        $stmt = $pdo->prepare($sql);
+                        $stmt->execute($arrParam);
 
-        </table>
+                        //若數量大於 0，則列出商品
+                        if ($stmt->rowCount() > 0) {
+                            $arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                            for ($i = 0; $i < count($arr); $i++) {
+                        ?>
+                                <tr>
+                                    <td style="width:50px" class="border">
+                                        <input type="checkbox" name="chk[]" value="<?php echo $arr[$i]['itemId']; ?>" />
+                                    </td>
+                                    <td style="width:80px" class="border"><?php echo $arr[$i]['itemName']; ?></td>
+                                    <td class="border"><img style="width:80px" class="itemImg" src="../images/items/<?php echo $arr[$i]['itemImg']; ?>" /></td>
+                                    <td style="width:50px" class="border"><?php echo $arr[$i]['itemPrice']; ?></td>
+                                    <td style="width:50px" class="border"><?php echo $arr[$i]['itemQty']; ?></td>
+                                    <td style="width:50px" class="border"><?php echo $arr[$i]['categoryName']; ?></td>
+                                    <td style="width:80px" class="border"><?php echo $arr[$i]['created_at']; ?></td>
+                                    <td style="width:80px" class="border"><?php echo $arr[$i]['updated_at']; ?></td>
+                                    <td style="width:80px" class="border">
+                                        <a href="./edit.php?itemId=<?php echo $arr[$i]['itemId']; ?>">商品編輯</a> |
+                                        <a href="./multipleImages.php?itemId=<?php echo $arr[$i]['itemId']; ?>">多圖設定</a> |
+                                        <a href="./comments.php?itemId=<?php echo $arr[$i]['itemId']; ?>">回覆評論</a>
+                                    </td>
+                                    <div class="">
+                                        <td class="border"><?php echo $arr[$i]['itemDescription']; ?></td>
+                                    </div>
+                                </tr>
+                            <?php
+                            }
+                        } else {
+                            ?>
+                            <tr>
+                                <td class="border" colspan="10">沒有資料</td>
+                            </tr>
+                        <?php
+                        }
+                        ?>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td class="border" colspan="10">
+                                <?php for ($i = 1; $i <= $totalPages; $i++) { ?>
+                                    <a href="?page=<?= $i ?>"><?= $i ?></a>
+                                <?php } ?>
+                            </td>
+                        </tr>
 
-    </form>
-    </div>
-</body>
+                        <?php if ($total > 0) { ?>
+                            <tr>
+                                <td class="border" colspan="10"><input type="submit" name="smb" value="刪除"></td>
+                            </tr>
+                        <?php } ?>
 
-<?php
-require_once('../templates/html-footer.php');//html-footer模板(BS設定)
-?>
+                        </tfoo>
+                </table>
+            </form>
+        <?php
+        } else {
+            //引入尚未建立商品種類的文字描述
+            require_once('./templates/noCategory.php');
+        } ?>
+    </body>
+
+    </html>
