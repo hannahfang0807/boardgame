@@ -2,8 +2,8 @@
 require_once ('./checkAdmin.php');
 require_once ('./db.inc.php');
 require_once ('./title.php');
-require_once ('../html-header.php');
-require_once ('../html-footer.php');
+require_once ('./html-header.php');
+require_once ('./html-footer.php');
 // require_once ('../templates/admin-nav.php');
 ?>
 
