@@ -19,7 +19,7 @@ $totalStores = $pdo->query('SELECT count(1) AS `count` FROM `store`')->fetchAll(
 </head>
 
 <body>
-    <?php require_once './templates/title.php' ?>
+    <?php require_once './title.php' ?>
     <hr>
     <h3>新增分店</h3>
     <form name="myForm" action="add.php" enctype="multipart/form-data" method="POST">

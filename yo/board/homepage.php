@@ -10,13 +10,28 @@ require_once('./db.inc.php');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>揪團留言版</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <style>
+        h2 {
+            text-align: center;
+        }
+
         .mainBoard {
             background: bisque;
+            width: 80%;
+            border: 3px solid rgb(255, 190, 100);
+            margin: 0 auto;
         }
 
         .replyBoard {
             background: lavender;
+            width: 95%;
+            border: 3px solid rgb(135, 195, 250);
+            margin: 0 auto;
+        }
+
+        .logo a {
+            padding-left: 10px;
         }
     </style>
 </head>
@@ -24,20 +39,24 @@ require_once('./db.inc.php');
 <body>
     <h2>留言版</h2>
     <form method="POST" action="./newMessage.php">
-        <input type="text" name="newMessage" placeholder="我想揪桌遊">
-        <select name="storeId">
-            <?php
-            $storeSql = "SELECT `storeName`,`storeId` FROM `store`";
-            $storeArr = $pdo->query($storeSql)->fetchAll();
-            for ($k = 0; $k < count($storeArr); $k++) { ?>
-                <option value="<?php echo $storeArr[$k]['storeId'] ?>">
-                    <?php echo $storeArr[$k]['storeName'] ?>
-                </option>
-            <?php
-            }
-            ?>
-        </select>
-        <input type="submit" name="smb" value="揪起來">
+        <div class="my-1" style="text-align: center;">
+            <select name="storeId">
+                <?php
+                $storeSql = "SELECT `storeName`,`storeId` FROM `store`";
+                $storeArr = $pdo->query($storeSql)->fetchAll();
+                for ($k = 0; $k < count($storeArr); $k++) { ?>
+                    <option value="<?php echo $storeArr[$k]['storeId'] ?>">
+                        <?php echo $storeArr[$k]['storeName'] ?>
+                    </option>
+                <?php
+                }
+                ?>
+            </select>
+            <br>
+            <textarea class="mt-2" name="newMessage" cols="100" rows="3"></textarea>
+            <br>
+            <input class="btn btn-warning" type="submit" name="smb" value="揪起來">
+        </div>
     </form>
     <hr>
     <?php
@@ -51,20 +70,21 @@ require_once('./db.inc.php');
         ORDER BY `message`.`updated_at` DESC";
         $arrMes = $pdo->query($mesSql)->fetchAll();
         for ($i = 0; $i < count($arrMes); $i++) { ?>
-            <div>
-                <div class="mainBoard">
-                    <!-- 項目內容因應會員新增的欄位變動 如暱稱、大頭貼等 -->
-                    <span>樓主:<?php echo $arrMes[$i]['memberNickname'] ?></span>
-                    <span>分店名稱:<?php echo $arrMes[$i]['storeName'] ?></span>
-                    <span>留言時間:<?php echo $arrMes[$i]['updated_at'] ?></span>
-                    <a href=""><img src="./pencil.svg" alt=""></a>
-                    <a href=""><img src="./cross.svg" alt=""></a>
-                    <div><img width="120px" src="../images/<?php echo $arrMes[$i]['memberImg'] ?>" alt="會員大頭貼"></div>
+            <div class="mainBoard p-3 mt-2">
+                <div class="d-flex" style="justify-content: space-between; align-items: center">
+                    <p class="pt-3">樓主:<?php echo $arrMes[$i]['memberNickname'] ?> | 分店名稱:<?php echo $arrMes[$i]['storeName'] ?> | 留言時間:<?php echo $arrMes[$i]['updated_at'] ?></p>
+                    <div class="logo">
+                        <a href="./editMes.php?editId=<?php echo $arrMes[$i]['messageId'] ?>"><img src="./pencil.svg" alt=""></a>
+                        <a href="./deleteMes.php?deleteId=<?php echo $arrMes[$i]['messageId'] ?>"><img src="./cross.svg" alt=""></a>
+                    </div>
+                </div>
+                <div class="d-flex" style="align-items: center;">
+                    <div class="pr-3"><img width="120px" src="../images/<?php echo $arrMes[$i]['memberImg'] ?>" alt="會員大頭貼"></div>
                     <p><?php echo $arrMes[$i]['content'] ?></p>
                 </div>
 
                 <?php
-                // 回文呈現區塊
+                // 回文呈現區塊 
                 $repSql = "SELECT `reply`.`replyId`,`members`.`memberName`,`members`.`memberImg`,`reply`.`content`,`reply`.`updated_at`
                         FROM `reply`
                         JOIN `members` ON `reply`.`memberId` = `members`.`memberId`
@@ -74,23 +94,32 @@ require_once('./db.inc.php');
                 if ($stmt->rowCount() > 0) {
                     $arrRep = $stmt->fetchAll();
                     for ($j = 0; $j < count($arrRep); $j++) { ?>
-                        <div class="replyBoard">
-                            <span>會員:<?php echo $arrRep[$j]['memberName'] ?></span>
-                            <span>留言時間:<?php echo $arrRep[$j]['updated_at'] ?></span>
-                            <div><img width="120px" src="../images/<?php echo $arrRep[$j]['memberImg'] ?>" alt="會員大頭貼"></div>
-                            <p><?php echo $arrRep[$j]['content'] ?></p>
+                        <div class="replyBoard my-2 p-3">
+                            <div class="d-flex" style="justify-content: space-between; align-items: center">
+                                <p class="pt-3">會員:<?php echo $arrRep[$j]['memberName'] ?> | 留言時間:<?php echo $arrRep[$j]['updated_at'] ?></p>
+                                <div class="logo">
+                                    <a href="./editRep.php?editId=<?php echo $arrRep[$j]['replyId'] ?>"><img src="./pencil.svg" alt=""></a>
+                                    <a href="./deleteRep.php?deleteId=<?php echo $arrRep[$j]['replyId'] ?>"><img src="./cross.svg" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="d-flex" style="align-items: center;">
+                                <div class="pr-3"><img width="120px" src="../images/<?php echo $arrRep[$j]['memberImg'] ?>" alt="會員大頭貼"></div>
+                                <p><?php echo $arrRep[$j]['content'] ?></p>
+                            </div>
                         </div>
                 <?php
                     }
                 }
                 ?>
+                <form method="POST" action="./reply.php">
+                    <div class="my-2" style="text-align: center;">
+                        <textarea name="replyMessage" cols="100" rows="3"></textarea>
+                        <input type="hidden" name="mesNum" value="<?php echo $arrMes[$i]['messageId'] ?>">
+                        <br>
+                        <input class="btn btn-danger" type="submit" value="回覆留言">
+                    </div>
+                </form>
             </div>
-            <form method="POST" action="./reply.php">
-                <input type="text" name="replyMessage">
-                <input type="hidden" name="mesNum" value="<?php echo $arrMes[$i]['messageId'] ?>">
-                <input type="submit" value="回覆留言">
-            </form>
-
         <?php
         }
         ?>

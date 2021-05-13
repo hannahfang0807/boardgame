@@ -1,6 +1,7 @@
 <?php
 // require_once './checkSession.php';
 require_once '../../db.inc.php';
+require_once '../../../../checkSession.php';
 
 $total = $pdo->query('SELECT count(1) AS `count` FROM `store`')->fetchAll()[0]['count'];
 $numPerPages = 5;
@@ -32,14 +33,14 @@ $page = $page < 1 ? 1 : $page;
 </style>
 
 <body>
-    <?php require_once './templates/title.php' ?>
+    <?php require_once './title.php' ?>
     <hr>
     <h3>分店列表</h3>
     <?php
     // 若有資料，則顯示資料
     if ($total > 0) {
     ?>
-        <form action="delete.php" name="myForm" method="POST" enctype="multipart/form-data">
+        <form action="./delete.php" name="myForm" method="POST" enctype="multipart/form-data">
             <table class="border">
                 <thead>
                     <tr>
@@ -81,7 +82,7 @@ $page = $page < 1 ? 1 : $page;
                                 <td class="border"><?php echo $arr[$i]['phoneNum'] ?></td>
                                 <td style="border: 1px solid" ; width="150px"><?php echo $arr[$i]['socialMedia'] ?></td>
                                 <td class="border"><?php echo $arr[$i]['address'] ?></td>
-                                <td class="border"><img width="150px" src="../storeImages/<?php echo $arr[$i]['storePhoto'] ?>"></td>
+                                <td class="border"><img width="150px" src="./storeImages/<?php echo $arr[$i]['storePhoto'] ?>"></td>
                                 <td class="border"><?php echo $arr[$i]['created_at'] ?></td>
                                 <td class="border"><?php echo $arr[$i]['updated_at'] ?></td>
                                 <td class="border"><a href="./edit.php?storeId=<?php echo $arr[$i]['storeId'] ?>">編輯</a></td>

@@ -17,7 +17,7 @@ require_once '../../db.inc.php';
 </head>
 
 <body>
-    <?php require_once './templates/title.php' ?>
+    <?php require_once './title.php' ?>
     <hr>
     <form action="update.php" name="myForm" method="POST" enctype="multipart/form-data">
         <table class="border">
@@ -63,7 +63,7 @@ require_once '../../db.inc.php';
                             <input type="text" name="address" value="<?php echo $arr['address'] ?>">
                         </td>
                         <td class="border">
-                            <img width="150px" src="../storeImages/<?php echo $arr['storePhoto'] ?>"><br>
+                            <img width="150px" src="./storeImages/<?php echo $arr['storePhoto'] ?>"><br>
                             <input type="file" name="storePhoto" value="">
                         </td>
                         <td class="border">

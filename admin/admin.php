@@ -41,7 +41,7 @@ $totalCatogories = $pdo->query($sqlTotalCatogories)->fetch(PDO::FETCH_NUM)[0];
     </head>
 
     <body>
-        <?php require_once('./templates/title.php'); ?>
+        <?php require_once('./title.php'); ?>
         <hr />
         <h3>商品列表</h3>
         <?php
@@ -139,7 +139,7 @@ $totalCatogories = $pdo->query($sqlTotalCatogories)->fetch(PDO::FETCH_NUM)[0];
         <?php
         } else {
             //引入尚未建立商品種類的文字描述
-            require_once('./templates/noCategory.php');
+            require_once('./noCategory.php');
         } ?>
     </body>
 
