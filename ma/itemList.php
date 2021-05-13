@@ -8,7 +8,7 @@ require_once("./tpl/func-buildTree.php");
 require_once("./tpl/func-getRecursiveCategoryIds.php");
 ?>
 
-<div class="container">
+<div class="container mt-5">
     <div class="row">
         <!-- 樹狀商品種類連結 -->
         <div class="col-md-2 col-sm-3"><?php buildTree($pdo, 0); ?></div>
