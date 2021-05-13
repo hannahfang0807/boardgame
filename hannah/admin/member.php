@@ -1,7 +1,7 @@
 <?php
 require_once ('.../admin/checkAdmin.php');
 require_once ('../db.inc.php');
-require_once ('../templates/title.php');
+require_once ('./title.php');
 
 $sqlTotal = "SELECT count(1) AS `count` FROM `members`";
 $stmtTotal = $pdo->query($sqlTotal);
@@ -120,5 +120,5 @@ $page = $page < 1 ? 1 : $page;
 </body>
 
 <?php
-require_once('../templates/html-footer.php');//html-footer模板(BS設定)
+require_once('../html-footer.php');//html-footer模板(BS設定)
 ?>
