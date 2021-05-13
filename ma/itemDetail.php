@@ -2,7 +2,7 @@
 session_start();
 require_once('../db.inc.php');
 require_once('./tpl/tpl-html-head.php');
-require_once('../nav.php');
+require_once('./nav.php');
 require_once("./tpl/func-buildTree.php");
 require_once("./tpl/func-getRecursiveCategoryIds.php");
 ?>
