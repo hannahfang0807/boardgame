@@ -4,7 +4,7 @@
         </h1>
         <div>
             <a class="p-2 text-dark font-weight-bold" href="./ma/itemList.php">商品一覽</a>
-            <a class="p-2 text-dark font-weight-bold" href="./eleanor/reservation.php">預約</a>
+            <a class="p-2 text-dark font-weight-bold" href="./eleanor/reservations.php">預約</a>
             <a class="p-2 text-dark font-weight-bold" href="./board.php">揪團留言板</a>
             <a class="p-2 text-dark font-weight-bold" href="./xiaoyae/index.php">分店資訊</a>
             <a class="p-2 text-dark font-weight-bold" href="./yo/board/homepage.php">管理員後台</a> 
