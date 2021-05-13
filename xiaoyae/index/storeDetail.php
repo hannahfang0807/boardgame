@@ -13,7 +13,10 @@ require_once './db.inc.php';
 </head>
 
 <body>
-    <?php require_once './store/admin/templates/tpl-header.php' ?>
+    <?php 
+    require_once '../../templates/html-header.php';
+    require_once '../../templates/nav.php';
+    ?>
     <div class="container-fluid">
         <div class="col-md-9 col-sm-8 m-auto">
             <?php
