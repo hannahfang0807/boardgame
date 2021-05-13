@@ -1,5 +1,7 @@
 <?php
 require_once("./db.inc.php");
+require_once("../checkAdmin.php");
+require_once('../title.php');
 
 $sqltotal = "SELECT count(1) AS `count` FROM `discount`";
 $stmtTotal = $pdo->query($sqltotal);
