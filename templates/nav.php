@@ -3,7 +3,7 @@
             <a href="./index.php" class="text-dark">會員系統</a>
         </h1>
         <div>
-            <a class="p-2 text-dark font-weight-bold" href="./ma/itemList.php">商品一覽</a>
+            <a class="p-2 text-dark font-weight-bold" href="../ma/itemList.php">商品一覽</a>
             <a class="p-2 text-dark font-weight-bold" href="./eleanor/reservations.php">預約</a>
             <a class="p-2 text-dark font-weight-bold" href="./yo/board/homepage.php">揪團留言板</a>
             <a class="p-2 text-dark font-weight-bold" href="./xiaoyae/index/index.php">分店資訊</a>
