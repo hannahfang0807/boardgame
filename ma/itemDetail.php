@@ -2,7 +2,7 @@
 session_start();
 require_once('../db.inc.php');
 require_once('./tpl/tpl-html-head.php');
-require_once('../templates/nav.php');
+require_once('./nav.php');
 require_once("./tpl/func-buildTree.php");
 require_once("./tpl/func-getRecursiveCategoryIds.php");
 ?>
@@ -66,7 +66,7 @@ require_once("./tpl/func-getRecursiveCategoryIds.php");
                                 <p>商品名稱: <?php echo $arr[0]["itemName"]; ?></p>
                                 <p>商品價格: <?php echo $arr[0]["itemPrice"]; ?></p>
                                 <p>商品數量: <?php echo $arr[0]["itemQty"]; ?></p>
-                                <form name="cartForm" id="cartForm" method="POST" action="./addCart.php">
+                                <form name="cartForm" id="cartForm" method="POST" action="../sophia/addCart.php">
                                     <label>數量: </label>
                                       <!-- 加的 -->
                                     <input type="number" name="cartQty" value="1" maxlength="5" min="1" max="<?php echo $arrItem["itemQty"] ?>">

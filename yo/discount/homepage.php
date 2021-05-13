@@ -28,7 +28,7 @@ $page = $page < 1 ? 1 : $page;
     <form method="POST" action="./deleteMore.php">
         <table>
             <thead>
-                <tr>
+                <tr style="bg-dark">
                     <th>勾選</th>
                     <th>會員姓名</th>
                     <th>折價券名稱</th>
