@@ -1,7 +1,9 @@
 <?php
-require_once ('.../admin/checkAdmin.php');
-require_once ('../db.inc.php');
-require_once ('../templates/title.php');
+require_once ('./checkAdmin.php');
+require_once ('./db.inc.php');
+// require_once ('./title.php');
+require_once ('../html-header.php');
+require_once ('../html-footer.php');
 
 $sqlTotal = "SELECT count(1) AS `count` FROM `members`";
 $stmtTotal = $pdo->query($sqlTotal);
@@ -32,6 +34,9 @@ $page = $page < 1 ? 1 : $page;
 </head>
 
 <body>
+<div>
+後端管理頁 | <a href="./category.php">編輯類別</a> | <a href="./paymentType.php">編輯付款方式</a> | <a href="./admin.php">商品列表</a> | <a href="./new.php">新增商品</a> | <a href="./orders.php">訂單一覽</a> | <a href="../hannah/admin/member.php">會員一覽</a> | <a href="./itemTracking.php">商品追蹤管理</a>| <a href="../index.php">網站前台</a> | <a href="../logout.php?logout=1">登出</a>
+</div>
 <div class="">
     <h3 class="mt-5 mb-3 text-center">會員一覽</h3>
     <form class="mForm" name="mForm" method="POST" action="">
@@ -120,5 +125,5 @@ $page = $page < 1 ? 1 : $page;
 </body>
 
 <?php
-require_once('../templates/html-footer.php');//html-footer模板(BS設定)
+require_once('../html-footer.php');//html-footer模板(BS設定)
 ?>
