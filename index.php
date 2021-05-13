@@ -15,5 +15,5 @@ require_once('./html-header.php'); //html-header模板(BS設定)
 
 
 <?php
-require_once('./templates/html-footer.php');//html-footer模板(BS設定)
+require_once('./html-footer.php');//html-footer模板(BS設定)
 ?>
