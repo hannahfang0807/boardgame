@@ -15,7 +15,7 @@ require_once './db.inc.php';
 <body>
     <?php 
     require_once '../../templates/html-header.php';
-    require_once '../../templates/nav.php';
+    require_once '../../nav.php';
     ?>
     <div class="container-fluid">
         <div class="col-md-9 col-sm-8 m-auto">

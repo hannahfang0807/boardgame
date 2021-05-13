@@ -2,7 +2,7 @@
 session_start();
 require_once ('./db.inc.php'); //連接資料庫
 require_once ('./templates/html-header.php'); //html-header模板(BS設定)
-require_once ('./templates/nav.php'); //引入導覽列
+require_once ('./nav.php'); //引入導覽列
 
 $objResponse['success'] = false;
 $objResponse['info'] = "登入失敗";
@@ -47,7 +47,7 @@ $objResponse['info'] = "登入失敗";
             <div class="text-center">
                 <button type="submit" class="btn btn-primary shadow-sm btn-block">登入</button>
                 
-                <a class="d-block mt-3 text-decoration-none" href="./register.php">註冊</a>
+                <a class="d-block mt-3 text-decoration-none" href="./hannah/register.php">註冊</a>
                 <a class="d-block mt-3 text-decoration-none" href="./admin/adminLogin.php">管理員登入</a>
             </div>
         </form>

@@ -1,6 +1,6 @@
 <?php
-require_once('./checkAdmin.php'); 
-require_once('../db.inc.php'); 
+require_once('.../checkAdmin.php'); 
+require_once('.../db.inc.php'); 
 
 $sqlGetImg = "SELECT `memberImg` FROM `members` WHERE `memberId` = ? ";
 $stmtGetImg = $pdo->prepare($sqlGetImg);

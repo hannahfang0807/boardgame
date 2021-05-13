@@ -1,9 +1,9 @@
 <?php
 
 session_start();
-require_once ('./db.inc.php'); //連接資料庫
-require_once ('./templates/html-header.php'); //html-header模板(BS設定)
-require_once ('./templates/nav.php'); //引入導覽列
+require_once ('../db.inc.php'); //連接資料庫
+require_once ('../templates/html-header.php'); //html-header模板(BS設定)
+require_once ('./nav.php'); //引入導覽列
 
 ?>
 <head>
@@ -39,7 +39,7 @@ require_once ('./templates/nav.php'); //引入導覽列
                 </div>
                 <div class="text-center">
                     <button type="submit" class="btn btn-primary shadow-sm btn-block">註冊</button>
-                    <a class="d-block mt-3 text-decoration-none" href="./login.php">已經有帳號？</a>
+                    <a class="d-block mt-3 text-decoration-none" href="../login.php">已經有帳號？</a>
                 </div>
             </form>
         </div>
@@ -47,5 +47,5 @@ require_once ('./templates/nav.php'); //引入導覽列
 </body>
 
 <?php
-require_once('./templates/html-footer.php'); //html-header模板(BS設定)
+require_once('../templates/html-footer.php'); //html-header模板(BS設定)
 ?>
