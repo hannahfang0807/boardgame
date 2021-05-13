@@ -19,7 +19,7 @@
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <a href="./itemList.php">
+          <a href="./ma/itemList.php">
             <img src="./ma/img/1.jpg" class="d-block w-100" alt="...">
           </a>
           <div class="carousel-caption d-none d-md-block">
@@ -28,7 +28,7 @@
           </div>
         </div>
         <div class="carousel-item">
-          <a href="./itemList.php">
+          <a href="./ma/itemList.php">
             <img src="./ma/img/2.jpeg" class="d-block w-100" alt="...">
           </a>
           <div class="carousel-caption d-none d-md-block">
@@ -37,7 +37,7 @@
           </div>
         </div>
         <div class="carousel-item">
-          <a href="./itemList.php">
+          <a href="./ma/itemList.php">
             <img src="./ma/img/3.jpg" class="d-block w-100" alt="...">
           </a>
           <div class="carousel-caption d-none d-md-block">
