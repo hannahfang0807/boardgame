@@ -9,8 +9,7 @@ if(isset($_GET['logout']) && $_GET['logout'] === '1'){
     session_destroy();
 
     //3 秒後跳頁
-    header("Refresh: 3; url=./index.php");
-?>
+    header("Refresh: 3; url=../index.php");?>
 <!DOCTYPYE html>
 <html>
 <head>
