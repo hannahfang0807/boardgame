@@ -9,7 +9,7 @@
             <a class="p-2 text-dark font-weight-bold" href="./xiaoyae/index/index.php">分店資訊</a>
         </div>
         <div>
-            <a class="p-2 text-dark" href="./ma/myCart.php">
+            <a class="p-2 text-dark" href="./sophia/myCart.php">
                 <span>我的購物車</span>
                 (<span id="cartItemNum">
                 <?php 
