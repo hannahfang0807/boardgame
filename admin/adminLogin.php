@@ -1,8 +1,8 @@
 <?php
 session_start();
 require_once ('../db.inc.php'); //連接資料庫
-require_once ('../templates/html-header.php'); //html-header模板(BS設定)
-require_once ('../templates/nav.php'); //引入導覽列
+require_once ('../html-header.php'); //html-header模板(BS設定)
+require_once ('../nav.php'); //引入導覽列
 
 
 //預設訊息 (錯誤先行)
@@ -64,5 +64,5 @@ $objResponse['info'] = "登入失敗";
 
 
 <?php
-require_once('../templates/html-footer.php'); //html-header模板(BS設定)
+require_once('../html-footer.php'); //html-header模板(BS設定)
 ?>
