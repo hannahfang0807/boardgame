@@ -1,20 +1,20 @@
 <?php
 
 session_start();
-require_once ('./db.inc.php');
+require_once ('../db.inc.php');
 
 $objResponse['success'] = false;
 $objResponse['info'] = "註冊失敗，：輸入完整資料";
 
 if ( $_POST['memberAccount'] == "" || $_POST['memberPwd'] == "" || $_POST['memberPwdCheck'] == ""){
-    header("Refresh: 3; url=./index.php");
+    header("Refresh: 3; url=../index.php");
     $objResponse['info'] = "註冊失敗：請輸入完整資料";
     echo json_encode($objResponse, JSON_UNESCAPED_UNICODE);
     exit();
 }
 
 if ( $_POST['memberPwd'] !== $_POST['memberPwdCheck']){
-    header("Refresh: 3; url=./index.php");
+    header("Refresh: 3; url=../index.php");
     $objResponse['info'] = "註冊失敗：兩次輸入的密碼不相同";
     echo json_encode($objResponse, JSON_UNESCAPED_UNICODE);
     exit();
@@ -32,7 +32,7 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute($arrParam);
 
 if($stmt->rowCount() > 0) {
-    header("Refresh: 3; url=./index.php");
+    header("Refresh: 3; url=../index.php");
 
     //註冊 session
     $_SESSION["memberAccount"] = $_POST["memberAccount"];
@@ -42,7 +42,7 @@ if($stmt->rowCount() > 0) {
     $objResponse['info'] = "註冊成功";
     echo json_encode($objResponse, JSON_UNESCAPED_UNICODE);
 } else {
-    header("Refresh: 3; url=./index.php");
+    header("Refresh: 3; url=../index.php");
     $objResponse['info'] = "註冊失敗";
     echo json_encode($objResponse, JSON_UNESCAPED_UNICODE);
 }
