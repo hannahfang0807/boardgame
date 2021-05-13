@@ -17,6 +17,8 @@ require_once ('../templates/admin-nav.php');
 </head>
 
 <body>
+<div>
+</div>
 <h3 class="mt-5 mb-5 text-center">修改會員資料</h3>
 <form class="form mb-5" name="mForm" method="POST" action="updateEdit.php" enctype="multipart/form-data">
         <?php
