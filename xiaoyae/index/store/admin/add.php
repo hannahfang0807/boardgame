@@ -1,5 +1,6 @@
 <?php
 require_once '../../db.inc.php';
+require_once '../../../../checkSession.php';
 
 // 回傳狀態
 $objResponse = [];
