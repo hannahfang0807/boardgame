@@ -6,11 +6,11 @@
                 <div class="col-md-6 d-flex justify-content-center pb-3">
                     <h1>所有商品</h1>
                 </div>
-                <div>
+                <!-- <div>
                     <a href="./itemList.php">
                         <h1 style="padding-left:185px">分類</h1>
                     </a>
-                </div>
+                </div> -->
                 <div class="col-md-3"></div>
             </div>
             <div class="row">
