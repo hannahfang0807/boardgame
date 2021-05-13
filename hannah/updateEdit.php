@@ -28,7 +28,7 @@ if( $_FILES["memberImg"]["error"] === 0 ) {
     $strDatetime = date("YmdHis");
     $extension = pathinfo($_FILES["memberImg"]["name"], PATHINFO_EXTENSION);
     $memberImg = $strDatetime.".".$extension;
-    if( move_uploaded_file($_FILES["memberImg"]["tmp_name"], "../images/".$memberImg) ) {
+    if( move_uploaded_file($_FILES["memberImg"]["tmp_name"], "./images/".$memberImg) ) {
 
         $sqlGetImg = "SELECT `memberImg` FROM `members` WHERE `memberId` = ? ";
         $stmtGetImg = $pdo->prepare($sqlGetImg);
@@ -42,7 +42,7 @@ if( $_FILES["memberImg"]["error"] === 0 ) {
         if($stmtGetImg->rowCount() > 0) {
             $arrImg = $stmtGetImg->fetchAll()[0];
             if($arrImg['memberImg'] !== NULL){
-                @unlink("./files/".$arrImg['memberImg']);
+                @unlink("./images/".$arrImg['memberImg']);
             } 
             
             $sql.= ",";

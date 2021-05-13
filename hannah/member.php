@@ -2,8 +2,8 @@
 require_once ('./checkAdmin.php');
 require_once ('./db.inc.php');
 require_once ('./title.php');
-require_once ('../html-header.php');
-require_once ('../html-footer.php');
+require_once ('./html-header.php');
+require_once ('./html-footer.php');
 
 $sqlTotal = "SELECT count(1) AS `count` FROM `members`";
 $stmtTotal = $pdo->query($sqlTotal);
@@ -80,7 +80,7 @@ $page = $page < 1 ? 1 : $page;
                 <td class="border"><?php echo $arr[$i]['memberNickname'] ?></td>
                 <td class="border p-0">
                 <?php if($arr[$i]['memberImg'] !== NULL) { ?>
-                    <img class="w200px" src="../images/<?php echo $arr[$i]['memberImg'] ?>">
+                    <img class="w200px" src="./images/<?php echo $arr[$i]['memberImg'] ?>">
                 <?php } ?>
                 </td>
                 <td class="border"><?php echo $arr[$i]['memberGender'] ?></td>
@@ -122,5 +122,5 @@ $page = $page < 1 ? 1 : $page;
 </body>
 
 <?php
-require_once('../html-footer.php');//html-footer模板(BS設定)
+require_once('./html-footer.php');//html-footer模板(BS設定)
 ?>
