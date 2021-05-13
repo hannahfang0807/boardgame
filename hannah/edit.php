@@ -64,7 +64,7 @@ require_once ('./html-footer.php');
             <label class="col-sm-3 col-form-label">會員大頭貼</label>
             <div class="col-sm-9">
                 <?php if($arr['memberImg'] !== NULL) { ?>
-                    <img class="w200px" src="../images/<?php echo $arr['memberImg'] ?>" />
+                    <img class="w200px" src="./images/<?php echo $arr['memberImg'] ?>" />
                 <?php } ?>
                 <input class="btn" type="file" name="memberImg" />
             </div>
