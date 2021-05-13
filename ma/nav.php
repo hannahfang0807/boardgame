@@ -1,6 +1,6 @@
 <nav class="d-flex align-items-center p-3 px-4 navbar navbar-dark bg-dark border-bottom shadow-sm">
         <h1 class="navbar-brand font-weight-bold my-0">
-            <a href="../index.php" class="text-warning">桌遊店-宇宙迷航</a>
+            <a href="../../index.php" class="text-warning">桌遊店-宇宙迷航</a>
         </h1>
         <div>
             <a class="p-2 text-light font-weight-bold" href="./itemList.php">商品一覽</a>

@@ -37,7 +37,7 @@
                 ?>
                         <div class="col-md-3 col-sm-6 button">
                             <div class="card mt-3 shadow-sm">
-                                <a href="./itemDetail.php?itemId=<?php echo $arr[$i]['itemId']; ?>">
+                                <a href="./ma/itemDetail.php?itemId=<?php echo $arr[$i]['itemId']; ?>">
                                     <img class="list-item" src="./ma/images/items/<?php echo $arr[$i]['itemImg']; ?>">
                                 </a>
                                 <div class="card-body">
