@@ -1,0 +1,13 @@
+CREATE TABLE `reservations` (
+  `reservationId` int(11) NOT NULL COMMENT '預約編號',
+  `memberId` int(11) NOT NULL COMMENT '會員編號',
+  `date` date NOT NULL COMMENT '預約時間',
+  `startTime` int(11) NOT NULL COMMENT '開始時間,24小時制',
+  `duration` tinyint(1) NOT NULL DEFAULT 3 COMMENT '預約時數, 3-8hrs',
+  `storeId` int(11) NOT NULL COMMENT '分店編號',
+  `numberOfPeople` tinyint(1) NOT NULL COMMENT '預約人數4-8',
+  `priceEstimated` int(11) NOT NULL COMMENT '金額預算',
+  `notes` varchar(50) DEFAULT NULL COMMENT '客人備註',
+  `created_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+)
