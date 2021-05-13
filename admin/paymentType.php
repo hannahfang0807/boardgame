@@ -17,7 +17,7 @@ require_once('../db.inc.php'); //引用資料庫連線
     </style>
 </head>
 <body>
-<?php require_once('./templates/title.php'); ?>
+<?php require_once('./title.php'); ?>
 <hr />
 <h3>編輯付款方式</h3>
 
