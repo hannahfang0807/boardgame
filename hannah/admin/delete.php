@@ -1,6 +1,6 @@
 <?php
-require_once('.../checkAdmin.php'); 
-require_once('.../db.inc.php'); 
+require_once('./checkAdmin.php'); 
+require_once('./db.inc.php'); 
 
 $sqlGetImg = "SELECT `memberImg` FROM `members` WHERE `memberId` = ? ";
 $stmtGetImg = $pdo->prepare($sqlGetImg);
@@ -27,7 +27,7 @@ $arrParam = [
 $stmt = $pdo->prepare($sql);
 $stmt->execute($arrParam);
 
-header("Refresh: 3; url=./admin.php");
+header("Refresh: 3; url=./member.php");
 
 if($stmt->rowCount() > 0) {
     echo "刪除成功";
