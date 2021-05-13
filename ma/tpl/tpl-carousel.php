@@ -20,7 +20,7 @@
       <div class="carousel-inner">
         <div class="carousel-item active">
           <a href="./itemList.php">
-            <img src="./img/1.jpg" class="d-block w-100" alt="...">
+            <img src="./ma/img/1.jpg" class="d-block w-100" alt="...">
           </a>
           <div class="carousel-caption d-none d-md-block">
             <!-- <h5>PGM Switch 底座</h5>
@@ -29,7 +29,7 @@
         </div>
         <div class="carousel-item">
           <a href="./itemList.php">
-            <img src="./img/2.jpeg" class="d-block w-100" alt="...">
+            <img src="./ma/img/2.jpeg" class="d-block w-100" alt="...">
           </a>
           <div class="carousel-caption d-none d-md-block">
             <!-- <h5>戰鎚：混沌禍源</h5>
@@ -38,7 +38,7 @@
         </div>
         <div class="carousel-item">
           <a href="./itemList.php">
-            <img src="./img/3.jpg" class="d-block w-100" alt="...">
+            <img src="./ma/img/3.jpg" class="d-block w-100" alt="...">
           </a>
           <div class="carousel-caption d-none d-md-block">
             <!-- <h5>NS Switch 無線控制器</h5>

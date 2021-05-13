@@ -9,7 +9,7 @@ require_once('./templates/html-header.php'); //html-header模板(BS設定)
     <?php
     require_once('./templates/nav.php'); //引入導覽列
     require_once('./ma/tpl/tpl-carousel.php');
-    require_once('./ma//tpl/main.php');
+    require_once('./ma/tpl/main.php');
 ?>
 
 
