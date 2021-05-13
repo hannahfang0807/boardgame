@@ -40,7 +40,7 @@ function buildTree($pdo, $parentId = 0)
     </head>
 
     <body>
-        <?php require_once('./templates/title.php'); ?>
+        <?php require_once('./title.php'); ?>
         <hr />
         <h3>商品列表</h3>
         <form name="myForm" enctype="multipart/form-data" method="POST" action="update.php">
