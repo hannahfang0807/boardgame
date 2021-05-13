@@ -32,6 +32,7 @@ require_once('./nav.php');
                                 <th scope="col" class="border-0 bg-light">
                                     <div class="py-2 text-uppercase">總金額</div>
                                 </th>
+                               
                             </tr>
                         </thead>
                         <tbody>

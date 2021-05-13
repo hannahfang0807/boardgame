@@ -10,7 +10,34 @@ require_once('./nav.php');
 <div class="container-fluid">
     <div class="row">
         <!-- 樹狀商品種類連結 -->
-       
+       <style>
+       img.list-item{
+    width: 100%;
+    max-width: 443.75px;
+}
+
+p.list-item-card {
+    height: 48px;
+}
+
+img.item-view {
+    width: 100%;
+    max-width: 500px;
+}
+
+img.item-preview {
+    width: 80px;
+    height: 80px;
+}
+
+img.item-tracking-preview {
+    width: 250px;
+}
+
+img.payment_type_icon{
+    width: 50px;
+}
+       </style>
 
         <!-- 商品項目清單 -->
         <div class="col-md-10 col-sm-9">
@@ -123,7 +150,7 @@ require_once('./nav.php');
                    
                     <input type="radio" name="paymentTypeId" id="paymentTypeId" value="<?php echo $arrPaymentType[$j]['paymentTypeId'] ?>">
                     <?php echo $arrPaymentType[$j]['paymentTypeName'] ?>
-                    <img class="payment_type_icon" src="./images/payment_Types/<?php echo $arrPaymentType[$j]['paymentTypeImg'] ?>">
+                    <img class="payment_type_icon" src="./images/payment_types/<?php echo $arrPaymentType[$j]['paymentTypeImg'] ?>">
                 </div>
                 <?php
                     }

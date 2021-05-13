@@ -9,7 +9,7 @@
             <a class="p-2 text-light font-weight-bold" href="../index/index.php">分店資訊</a>
         </div>
         <div>
-            <a class="p-2 text-light " href="./sophia/myCart.php">
+            <a class="p-2 text-light " href="../../sophia/myCart.php">
                 <span>我的購物車</span>
                 (<span id="cartItemNum">
                 <?php 
@@ -25,8 +25,8 @@
                 <!-- <a class="p-2 text-light" href="./hannah/member.php">會員中心</a> -->
             <?php } ?>
             <?php if(!isset($_SESSION["memberAccount"])){ ?>
-                <a class="btn btn-info my-0" href="./hannah/register.php">註冊</a>
-                <a class="btn btn-warning my-0" href="./login.php">登入</a>
+                <a class="btn btn-info my-0" href="../../hannah/register.php">註冊</a>
+                <a class="btn btn-warning my-0" href="../../login.php">登入</a>
             <?php } else { ?>
                 <span class="text-light"><?php echo $_SESSION["memberAccount"] ?> 您好</span>    
                 <a class="btn btn-warning my-0 ml-2" href="./logout.php">登出</a>

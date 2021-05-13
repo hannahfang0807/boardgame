@@ -1,6 +1,6 @@
 <?php
 require_once('./checkAdmin.php');
-require_once('../db.inc.php');
+require_once('./db.inc.php');
 
 $sql = "UPDATE `members` 
         SET 
@@ -59,7 +59,7 @@ $arrParam[] = (int)$_POST['id'];
 $stmt = $pdo->prepare($sql);
 $stmt->execute($arrParam);
 
-header("Refresh: 3; url=./admin.php");
+header("Refresh: 3; url=./member.php");
 
 if( $stmt->rowCount() > 0 ){
     echo "更新成功";

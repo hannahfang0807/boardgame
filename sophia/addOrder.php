@@ -8,7 +8,7 @@ $objResponse['success'] = false;
 $objResponse['info'] = "訂單新增失敗";
 
 if (!isset($_POST["paymentTypeId"])) {
-    header("Refresh: 3; url=./myCart.php");
+    header("Refresh: 1; url=./myCart.php");
     $objResponse['info'] = "請選擇付款方式…3秒後回購物車列表";
     echo json_encode($objResponse, JSON_UNESCAPED_UNICODE);
     exit();

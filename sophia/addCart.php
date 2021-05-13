@@ -46,12 +46,12 @@ if($stmt->rowCount() > 0) {
         "cartQty"   => $_POST["cartQty"]
     ];
 
-    header("Refresh: 3; url=./myCart.php");
+    header("Refresh: 1; url=./myCart.php");
     $objResponse['success'] = true;
     $objResponse['info'] = "已加入購物車";
     $objResponse['cartItemNum'] = count($_SESSION['cart']);
 } else {
-    header("Refresh: 3; url=./ma/itemDetail.php?itemId={$_POST['itemId']}");
+    header("Refresh: 1; url=./ma/itemDetail.php?itemId={$_POST['itemId']}");
     $objResponse['info'] = "查無商品項目";
     $objResponse['cartItemNum'] = count($_SESSION['cart']);
     echo json_encode($objResponse, JSON_UNESCAPED_UNICODE);

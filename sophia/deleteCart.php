@@ -7,7 +7,7 @@ require_once('./nav.php');
 $objResponse['success'] = false;
 $objResponse['info'] = "查無購物車編號";
 
-header("Refresh: 3; url=./myCart.php");
+header("Refresh: 1; url=./myCart.php");
 
 if( !isset($_GET["idx"]) ){
     echo json_encode($objResponse, JSON_UNESCAPED_UNICODE);

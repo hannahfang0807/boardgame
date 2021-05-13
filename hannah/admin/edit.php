@@ -1,7 +1,10 @@
 <?php
 require_once ('./checkAdmin.php');
-require_once ('../db.inc.php');
-require_once ('../templates/admin-nav.php');
+require_once ('./db.inc.php');
+require_once ('./title.php');
+require_once ('../html-header.php');
+require_once ('../html-footer.php');
+// require_once ('../templates/admin-nav.php');
 ?>
 
 <head>
@@ -17,6 +20,8 @@ require_once ('../templates/admin-nav.php');
 </head>
 
 <body>
+<div>
+</div>
 <h3 class="mt-5 mb-5 text-center">修改會員資料</h3>
 <form class="form mb-5" name="mForm" method="POST" action="updateEdit.php" enctype="multipart/form-data">
         <?php
@@ -124,7 +129,7 @@ require_once ('../templates/admin-nav.php');
 
         <div class="text-center mb-5" colspan="10">
             <button type="submit" class="btn btn-primary shadow-sm mx-3 my-3">修改資料</button>
-            <a class=" text-decoration-none" href="./admin.php">回會員一覽</a>
+            <a class=" text-decoration-none" href="./member.php">回會員一覽</a>
             <!-- <input type="submit" name="smb" value="修改">修改資料 -->
         </div>
 

@@ -1,7 +1,9 @@
 <?php
-require_once ('.../admin/checkAdmin.php');
-require_once ('../db.inc.php');
+require_once ('./checkAdmin.php');
+require_once ('./db.inc.php');
 require_once ('./title.php');
+require_once ('../html-header.php');
+require_once ('../html-footer.php');
 
 $sqlTotal = "SELECT count(1) AS `count` FROM `members`";
 $stmtTotal = $pdo->query($sqlTotal);
