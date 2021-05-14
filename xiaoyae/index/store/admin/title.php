@@ -1,6 +1,6 @@
 <nav class="d-flex align-items-center p-3 px-4 navbar navbar-light bg-light border-bottom shadow-sm">
     <h1 class="navbar-brand font-weight-bold my-0">
-        <a href="../admin/admin.php" class="text-dark">桌遊店後台-宇宙迷航</a>
+        <a href="../../../../admin/admin.php" class="text-dark">桌遊店後台-宇宙迷航</a>
     </h1>
     <div>
         <a class="p-2 text-dark font-weight-bold" href="../../../../admin/category.php">遊戲類別管理</a>

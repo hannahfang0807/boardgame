@@ -119,13 +119,13 @@ img.payment_type_icon{
                                     <input class="border-0 align-middle" name="cartQty[]" value="<?php echo $arr[$i]["cartQty"] ?>" maxlength="3">
 
                                 <td class="border-0 align-middle  ">$
-                                <input class="border-0 align-middle" name="subtotal[]" value="<?php echo ($arr[$i]["itemPrice"] * $arr[$i]["cartQty"]) ?>" maxlength="3">
+                                <input class="border-0 align-middle" name="subtotal[]" value="<?php echo ($arr[$i]["itemPrice"] * $arr[$i]["cartQty"]) ?>" maxlength="3" >
                                    
                                 </td>
                                 <td class="border-0 align-middle"><a href="./deleteCart.php?idx=<?php echo $i ?>" class="text-dark">刪除</a></td>
                             </tr>
                             <input type="hidden" name="itemId[]" value="<?php echo $arr[$i]["itemId"] ?>">
-                            <input type="hidden" name="itemPrice[]" value="<?php echo $arr[$i]["itemPrice"] ?>">
+                            <input type="hidden" name="itemPrice[]" value="<?php echo $arr[$i]["itemPrice"] ?>" >
                         <?php 
                             }
                         }

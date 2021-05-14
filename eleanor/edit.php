@@ -77,10 +77,19 @@ if($stmt->rowCount() > 0) {
         </td>
         <td>
             <select name="storeId" id="branch">
-            <?php (int)$result['storeId']=== 1?  $opt = '<option value="1">台北店</option>' : $opt ='<option value="2">台中店</option>' ?>
-                <?php echo $opt ?>
-                <option value="1">台北店</option>
-                <option value="2">台中店</option>
+            <?php 
+                $sql = "SELECT `storeName`, `storeId` FROM `store`";
+                $res = $pdo->query($sql);
+                if ($res->rowCount() >0){
+                    $stores = $res->fetchAll();
+                    for ($i = 0; $i < count($stores); $i++){ ?>
+                    <option value="<?php echo $result['storeId'];?>"> <?php  ?> </option>
+                      <option value= <?php echo $stores[$i]['storeId'] ?>><?php echo $stores[$i]['storeName'] ?></option>
+
+            <?php    }
+                } 
+            ?>
+
             </select>
     
         </td>
@@ -108,5 +117,7 @@ if($stmt->rowCount() > 0) {
 <button>確認修改</button>
 </form>
 <a href="./reservations.php">回上頁</a>
+
+
 </body>
 </html>
