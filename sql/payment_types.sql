@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2021-05-14 10:00:38
+-- 產生時間： 2021-05-14 11:21:36
 -- 伺服器版本： 10.4.18-MariaDB
 -- PHP 版本： 8.0.3
 
@@ -42,7 +42,7 @@ CREATE TABLE `payment_types` (
 INSERT INTO `payment_types` (`paymentTypeId`, `paymentTypeName`, `paymentTypeImg`, `created_at`, `updated_at`) VALUES
 (2, 'Line pay', 'payment_type_20210513144250.jpg', '2021-04-23 14:38:58', '2021-05-13 14:42:50'),
 (3, '超商付款', 'payment_type_20210513145223.png', '2021-05-13 09:49:06', '2021-05-13 14:52:23'),
-(4, 'apple pay', 'payment_type_20210513150230.png', '2021-05-13 15:02:30', '2021-05-13 15:02:30'),
+(4, 'apple ', 'payment_type_20210513150230.png', '2021-05-13 15:02:30', '2021-05-14 11:18:54'),
 (5, 'ATM匯款', 'payment_type_20210513150339.png', '2021-05-13 15:03:39', '2021-05-13 16:50:59');
 
 --
@@ -63,7 +63,7 @@ ALTER TABLE `payment_types`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `payment_types`
 --
 ALTER TABLE `payment_types`
-  MODIFY `paymentTypeId` int(11) NOT NULL AUTO_INCREMENT COMMENT '流水號', AUTO_INCREMENT=7;
+  MODIFY `paymentTypeId` int(11) NOT NULL AUTO_INCREMENT COMMENT '流水號', AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
