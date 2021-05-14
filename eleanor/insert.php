@@ -1,5 +1,5 @@
 <?php
-require_once('./db.connect.php');
+  require_once('../db.inc.php');
 
 //get the price
 $priceEstimated =  (int)$_POST['duration'] * (int)$_POST['numberOfPeople'] * 100;
