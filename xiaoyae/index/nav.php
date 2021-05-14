@@ -6,7 +6,7 @@
             <a class="p-2 text-light font-weight-bold" href="../../ma/itemList.php">商品一覽</a>
             <a class="p-2 text-light font-weight-bold" href="../../eleanor/reservations.php">預約</a>
             <a class="p-2 text-light font-weight-bold" href="../../yo/board/homepage.php">揪團留言板</a>
-            <a class="p-2 text-light font-weight-bold" href="../index/index.php">分店資訊</a>
+            <a class="p-2 text-muted font-weight-bold" href="../index/index.php">分店資訊</a>
         </div>
         <div>
             <a class="p-2 text-light " href="../../sophia/myCart.php">
