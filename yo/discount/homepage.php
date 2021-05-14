@@ -1,7 +1,8 @@
 <?php
 require_once("./db.inc.php");
 require_once("../checkAdmin.php");
-require_once('../title.php');
+require_once('./titlecopy.php');
+require_once('./html-header.php');
 
 $sqltotal = "SELECT count(1) AS `count` FROM `discount`";
 $stmtTotal = $pdo->query($sqltotal);
@@ -26,8 +27,9 @@ $page = $page < 1 ? 1 : $page;
 </head>
 
 <body>
+    <br>
     <?php require_once("./title.php") ?>
-    <form method="POST" action="./deleteMore.php">
+    <form method="POST" action="./deleteMore.php" style="margin: 0 auto;">
         <table>
             <thead>
                 <tr style="bg-dark">
@@ -86,7 +88,7 @@ $page = $page < 1 ? 1 : $page;
                     </td>
                 </tr>
                 <tr>
-                    <td><input type="submit" value="確定刪除"></td>
+                    <td style="text-align: center;"><input type="submit" value="確定刪除"></td>
                 </tr>
             </tfoot>
         </table>
