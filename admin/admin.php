@@ -54,7 +54,7 @@ $totalCatogories = $pdo->query($sqlTotalCatogories)->fetch(PDO::FETCH_NUM)[0];
                         <tr>
                             <th class="border">勾選</th>
                             <th class="border">名稱</th>
-                            <th class="border">照片路徑</th>
+                            <th class="border">照片</th>
                             <th class="border">價格</th>
                             <th class="border">數量</th>
                             <th class="border">種類</th>
@@ -92,7 +92,7 @@ $totalCatogories = $pdo->query($sqlTotalCatogories)->fetch(PDO::FETCH_NUM)[0];
                                         <input type="checkbox" name="chk[]" value="<?php echo $arr[$i]['itemId']; ?>" />
                                     </td>
                                     <td style="width:80px" class="border"><?php echo $arr[$i]['itemName']; ?></td>
-                                    <td class="border"><img style="width:80px" class="itemImg" src="../images/items/<?php echo $arr[$i]['itemImg']; ?>" /></td>
+                                    <td class="border"><img style="width:80px" class="itemImg" src="../ma/images/items/<?php echo $arr[$i]['itemImg']; ?>" /></td>
                                     <td style="width:50px" class="border"><?php echo $arr[$i]['itemPrice']; ?></td>
                                     <td style="width:50px" class="border"><?php echo $arr[$i]['itemQty']; ?></td>
                                     <td style="width:50px" class="border"><?php echo $arr[$i]['categoryName']; ?></td>
