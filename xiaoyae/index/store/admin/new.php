@@ -1,5 +1,9 @@
 <?php
 require_once '../../db.inc.php';
+require_once '../../../../admin/checkAdmin.php';
+require_once './html-header.php';
+require_once './html-footer.php';
+
 
 $totalStores = $pdo->query('SELECT count(1) AS `count` FROM `store`')->fetchAll()[0]['count'];
 ?>
@@ -21,11 +25,11 @@ $totalStores = $pdo->query('SELECT count(1) AS `count` FROM `store`')->fetchAll(
 <body>
     <?php require_once './title.php' ?>
     <hr>
-    <h3>新增分店</h3>
-    <form name="myForm" action="add.php" enctype="multipart/form-data" method="POST">
-        <table class="border">
-            <thead>
-                <tr>
+    <h3 class="text-center">新增分店</h3>
+    <form name="myForm" action="./add.php" enctype="multipart/form-data" method="POST">
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr class="text-center">
                     <th class="border">分店名稱</th>
                     <th class="border">分店電話</th>
                     <th class="border">社交軟體</th>
@@ -34,7 +38,7 @@ $totalStores = $pdo->query('SELECT count(1) AS `count` FROM `store`')->fetchAll(
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr class="text-center">
                     <td class="border">
                         <input type="text" name="storeName" value="" maxlength="20">
                     </td>
@@ -54,8 +58,8 @@ $totalStores = $pdo->query('SELECT count(1) AS `count` FROM `store`')->fetchAll(
                 </tr>
             </tbody>
             <tfoot>
-                <tr>
-                    <td>
+                <tr class="text-center">
+                    <td class="border" colspan="5">
                         <input style="margin: 5px;" type="submit" name="sub" value="新增">
                     </td>
                 </tr>
