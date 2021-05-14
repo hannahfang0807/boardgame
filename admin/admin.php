@@ -32,6 +32,7 @@ $totalCatogories = $pdo->query($sqlTotalCatogories)->fetch(PDO::FETCH_NUM)[0];
             img.itemImg {
                 width: 250px;
             }
+
             .ellipsis {
                 overflow: hidden;
                 white-space: nowrap;
@@ -43,7 +44,7 @@ $totalCatogories = $pdo->query($sqlTotalCatogories)->fetch(PDO::FETCH_NUM)[0];
     <body>
         <?php require_once('./title.php'); ?>
         <hr />
-        <h3>商品列表</h3>
+            <h3>商品列表 <a href="./new.php">新增商品</a> </h3>
         <?php
         //若有建立商品種類，則顯示商品清單
         if ($totalCatogories > 0) {
