@@ -24,7 +24,7 @@ if ( $stmtGetImg->rowCount() > 0 ) {
         // 若 storePhoto 裡面不為空值，代表曾經上傳過照片
         if ($arrImg[$i]['storePhoto'] !== NULL) {
             // 刪黨
-            @unlink('../storeImages/' . $arrImg[$i]['storePhoto']);
+            @unlink('./storeImages/' . $arrImg[$i]['storePhoto']);
         }
 
     }
