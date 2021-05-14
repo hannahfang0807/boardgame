@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2021-05-13 10:21:06
+-- 產生時間： 2021-05-14 11:31:41
 -- 伺服器版本： 10.4.18-MariaDB
 -- PHP 版本： 8.0.3
 
@@ -42,7 +42,8 @@ CREATE TABLE `message` (
 
 INSERT INTO `message` (`messageId`, `memberId`, `storeId`, `content`, `created_at`, `updated_at`) VALUES
 (1, 2, 1, '安安大家好\r\n明天下午2:00矮人礦坑缺2', '2021-05-10 14:17:56', '2021-05-12 10:08:29'),
-(2, 8, 1, '留言板測試', '2021-05-13 10:18:22', '2021-05-13 10:18:22');
+(2, 8, 1, '留言板測試', '2021-05-13 10:18:22', '2021-05-13 10:18:22'),
+(11, 5, 7, '起來嗨', '2021-05-14 10:04:03', '2021-05-14 10:04:03');
 
 --
 -- 已傾印資料表的索引
@@ -62,7 +63,7 @@ ALTER TABLE `message`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `message`
 --
 ALTER TABLE `message`
-  MODIFY `messageId` int(11) NOT NULL AUTO_INCREMENT COMMENT '留言編號', AUTO_INCREMENT=10;
+  MODIFY `messageId` int(11) NOT NULL AUTO_INCREMENT COMMENT '留言編號', AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
