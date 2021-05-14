@@ -2,6 +2,8 @@
 // require_once './checkSession.php';
 require_once '../../db.inc.php';
 require_once '../../../../admin/checkAdmin.php';
+require_once './html-header.php';
+require_once './html-footer.php';
 
 $total = $pdo->query('SELECT count(1) AS `count` FROM `store`')->fetchAll()[0]['count'];
 $numPerPages = 5;
@@ -26,6 +28,7 @@ $page = $page < 1 ? 1 : $page;
     .border {
         border: 1px solid;
     }
+
     .page {
         border: 1px solid;
         text-align: center;
@@ -35,15 +38,16 @@ $page = $page < 1 ? 1 : $page;
 <body>
     <?php require_once './title.php' ?>
     <hr>
-    <h3>分店列表</h3>
+    <h3 class="text-center">分店列表</h3>
     <?php
     // 若有資料，則顯示資料
     if ($total > 0) {
     ?>
+        <h3><a class="text-info" href="./new.php"> 新增分店</a></h3>
         <form action="./delete.php" name="myForm" method="POST" enctype="multipart/form-data">
-            <table class="border">
-                <thead>
-                    <tr>
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr class="text-center">
                         <th class="border">勾選</th>
                         <th class="border">分店名稱</th>
                         <th class="border">分店市話</th>
@@ -73,7 +77,7 @@ $page = $page < 1 ? 1 : $page;
                         for ($i = 0; $i < count($arr); $i++) {
                     ?>
                             <tr>
-                                <td class="border">
+                                <td class="text-center">
                                     <!-- chk[] >> 讓選項直接變成陣列 [1, 2, 3, ...] -->
                                     <input type="checkbox" name="chk[]" value="<?php echo $arr[$i]['storeId'] ?>">
                                 </td>
@@ -85,7 +89,7 @@ $page = $page < 1 ? 1 : $page;
                                 <td class="border"><img width="150px" src="./storeImages/<?php echo $arr[$i]['storePhoto'] ?>"></td>
                                 <td class="border"><?php echo $arr[$i]['created_at'] ?></td>
                                 <td class="border"><?php echo $arr[$i]['updated_at'] ?></td>
-                                <td class="border"><a href="./edit.php?storeId=<?php echo $arr[$i]['storeId'] ?>">編輯</a></td>
+                                <td class="border"><a class="btn btn-primary" href="./edit.php?storeId=<?php echo $arr[$i]['storeId'] ?>">編輯</a></td>
                             </tr>
                         <?php
                         }
@@ -101,10 +105,10 @@ $page = $page < 1 ? 1 : $page;
                 <tfoot>
                     <tr>
                         <!-- 頁碼 -->
-                        <td class="page" colspan="10">
+                        <td class="page text-center" colspan="10">
                             <?php
                             for ($i = 1; $i <= $totalPages; $i++) { ?>
-                                <a href="?page=<?php echo $i ?>"><?php echo $i ?></a>
+                                <a class="btn btn-primary my-3 mx-1" href="?page=<?php echo $i ?>"><?php echo $i ?></a>
                             <?php } ?>
                         </td>
                     </tr>
