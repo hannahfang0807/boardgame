@@ -39,15 +39,6 @@ require_once('./checkSession.php')
 
   }
 
-
-  // echo $sql;
-  // $res = $pdo->query($sql);
-  // if($res->rowCount() > 0) {
-  //   $memberinfo = $res->fetchAll()[0]; 
-  //   $memberName = $memberinfo['memberName'];
-    
-  // }
-
 ?>
 
 <?php //require_once('../templates/html-header.php') ?>
@@ -97,7 +88,7 @@ require_once('./checkSession.php')
 <div class="mt-10 max-w-md mx-auto mb-10 bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
   <div class="md:flex">
     <div class="flex flex-col justify-center md:flex-shrink-0">
-      <img class="h-48 w-full object-cover md:w-48" src="./img/Female-Avatar.png" >
+      <img class="h-48 w-full object-cover md:w-48" src="../hannah/images/<?php echo $memberImg ?>" >
     </div>
     <div class="p-8 flex flex-col">
       <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold"><h1>您好 <?php echo $memberName ?></h1></div>
