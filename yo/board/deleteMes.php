@@ -10,9 +10,9 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute([$_GET['deleteId']]);
 
 if ($stmt->rowCount() > 0) {
-    header("Refresh: 2; url=./homepage.php");
+    header("Refresh: 0; url=./homepage.php");
     echo "刪除成功";
 } else {
-    header("Refresh: 2; url=./homepage.php");
+    header("Refresh: 0; url=./homepage.php");
     echo "刪除失敗";
 }
