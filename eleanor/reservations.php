@@ -92,7 +92,7 @@ require_once('./checkSession.php')
     </div>
     <div class="p-8 flex flex-col">
       <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold"><h1>您好 <?php echo $memberName ?></h1></div>
-      <a href="#" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">去商城查看最新商品</a>
+      <a href="../index.php" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">去商城查看最新商品</a>
       <p class="mt-2 text-gray-500">即日起實施入場消費實名制登記，請各位貴賓配合填寫。相關規範與注意事項，謹遵照衛服部疾管署之【COVID-19(武漢肺炎)防疫新生活運動：實聯制措施指引】辦理</p>
 
         <a href="../logout.php?logout=1"><button class="ml-auto w-20 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
@@ -136,11 +136,26 @@ require_once('./checkSession.php')
               </div>
 
               <div class="col-span-6 sm:col-span-3">
-                <label for="time" class="block text-sm font-medium text-gray-700">選擇分店</label>
+
+                    
+
+
+
+          
+                <label for="time" class="block text-sm font-medium text-gray-700">選擇分店</label>                
                 <select id="storeId" name="storeId" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                    <option value="1">台北店</option>
-                    <option value="2">台中店</option>
+                
+                <?php 
+                $sql = "SELECT `storeName`, `storeId` FROM `store`";
+                $res = $pdo->query($sql);
+                if ($res->rowCount() > 0) {
+                  $stores = $res->fetchAll();
+                  for ($i = 0; $i < count($stores); $i++){ ?>
+
+                    <option value= <?php echo $stores[$i]['storeId'] ?>><?php echo $stores[$i]['storeName'] ?></option>
+                    <?php }}?>
                 </select>
+                   
               </div>
 
 
@@ -194,7 +209,12 @@ require_once('./checkSession.php')
 
     <?php 
   require_once('../db.inc.php');
-  $sql = "SELECT * FROM `reservations` WHERE `memberId` = ? ORDER BY date ASC";
+  $sql = "SELECT * FROM `reservations` 
+          JOIN `store` 
+          ON `reservations`.`storeId` = `store`.`storeId` 
+          WHERE `memberId` = ? 
+          ORDER BY date ASC";
+
         $arrParam = array($memberId); //[42]
         $res = $pdo->prepare($sql);
         $res->execute($arrParam);
@@ -205,8 +225,6 @@ require_once('./checkSession.php')
 
     <h1>我的預約</h1>
     <h2>總計 <?php echo count($arr); ?> 筆預約</h2>
-
-
 
     
 <div class="my-5 2xl:mx-50 xl:mx-50 md:mx-20 sm:mx-10 shadow overflow-hidden sm:rounded-md">
@@ -242,7 +260,11 @@ require_once('./checkSession.php')
           <!-- <div class="px-3 py-5 "><?php //echo $memberName  ?></div> -->
           <div class="px-3 py-5 "><?php echo $arr[$i]['startTime']  ?> :00</div>
           <div class="px-3 py-5 "><?php echo $arr[$i]['duration']  ?></div>
-          <div class="px-3 py-5 "><?php $store = (int)$arr[$i]['storeId'] === 1? "台北店" : "台中店"; echo $store; ?></div>
+          <div class="px-3 py-5 "><?php
+
+            echo $arr[$i]['storeName'] 
+           
+           ?></div>
           <div class="px-3 py-5 "><?php echo $arr[$i]['numberOfPeople']  ?></div>
           <div class="px-3 py-5 "><?php echo $arr[$i]['priceEstimated']  ?></div>
           <div class="px-3 py-5 col-span-2">
