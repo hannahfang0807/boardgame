@@ -21,7 +21,7 @@ if( isset($_POST['memberAccount']) && isset($_POST['memberPwd'])  ){
     if ( $stmt->rowCount() > 0 ){
         session_start();
         $_SESSION['memberAccount'] = $_POST['memberAccount'];
-        $_SESSION['memberId'] = $stmt->fetch()[0]['memberId'];
+        $_SESSION['memberId'] = $stmt->fetchAll()[0]['memberId'];
 
         header("Refresh: 3; url=./index.php");
         echo "登入成功!!! 3秒後自動進入跳轉頁面";
