@@ -92,7 +92,7 @@ require_once('./checkSession.php')
     </div>
     <div class="p-8 flex flex-col">
       <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold"><h1>您好 <?php echo $memberName ?></h1></div>
-      <a href="#" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">去商城查看最新商品</a>
+      <a href="../index.php" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">去商城查看最新商品</a>
       <p class="mt-2 text-gray-500">即日起實施入場消費實名制登記，請各位貴賓配合填寫。相關規範與注意事項，謹遵照衛服部疾管署之【COVID-19(武漢肺炎)防疫新生活運動：實聯制措施指引】辦理</p>
 
         <a href="../logout.php?logout=1"><button class="ml-auto w-20 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
