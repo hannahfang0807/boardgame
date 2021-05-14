@@ -100,9 +100,7 @@ $totalCatogories = $pdo->query($sqlTotalCatogories)->fetch(PDO::FETCH_NUM)[0];
                                     <td style="width:80px" class="border"><?php echo $arr[$i]['created_at']; ?></td>
                                     <td style="width:80px" class="border"><?php echo $arr[$i]['updated_at']; ?></td>
                                     <td style="width:80px" class="border">
-                                        <a href="./edit.php?itemId=<?php echo $arr[$i]['itemId']; ?>">商品編輯</a> |
-                                        <a href="./multipleImages.php?itemId=<?php echo $arr[$i]['itemId']; ?>">多圖設定</a> |
-                                        <a href="./comments.php?itemId=<?php echo $arr[$i]['itemId']; ?>">回覆評論</a>
+                                        <a href="./edit.php?itemId=<?php echo $arr[$i]['itemId']; ?>">商品編輯</a> 
                                     </td>
                                     <div class="">
                                         <td class="border"><?php echo $arr[$i]['itemDescription']; ?></td>
