@@ -1,5 +1,6 @@
 <?php
-session_start();
+
+require_once('./checkSession.php');
 require_once('./db.inc.php');
 require_once('./html-header.php'); 
 require_once('./nav.php'); 
