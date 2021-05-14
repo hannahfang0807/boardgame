@@ -3,7 +3,7 @@ session_start();
 require_once('./db.inc.php');
 
 // 測試用 正式上線需要在登入頁把 memberId 寫進 Session 中
-$_SESSION['memberId'] = 1;
+// $_SESSION['memberId'] = 1;
 
 $sql = "INSERT INTO `message` (`memberId`,`storeId`,`content`) VALUE ( ?,?,? ) ";
 $arrParam = [
