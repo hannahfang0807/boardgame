@@ -1,6 +1,6 @@
 <nav class="d-flex align-items-center p-3 px-4 navbar navbar-light bg-light border-bottom shadow-sm">
     <h1 class="navbar-brand font-weight-bold my-0">
-        <a href="../admin/admin.php" class="text-dark">桌遊店後台-宇宙迷航</a>
+        <a href="../../admin/admin.php" class="text-dark">桌遊店後台-宇宙迷航</a>
     </h1>
     <div>
         <a class="p-2 text-dark font-weight-bold" href="../../admin/category.php">遊戲類別管理</a>
@@ -16,7 +16,7 @@
     <div>
 
         <span class="text-dark">管理員 您好</span>
-        <a class="btn btn-dark my-0 ml-2" href="../admin/adminLogout.php">登出</a>
+        <a class="btn btn-dark my-0 ml-2" href="../../admin/adminLogout.php">登出</a>
 
     </div>
 </nav>
