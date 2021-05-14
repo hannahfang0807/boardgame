@@ -5,13 +5,12 @@
         <div>
             <a class="p-2 text-dark font-weight-bold" href="../admin/category.php">遊戲類別管理</a>
             <a class="p-2 text-dark font-weight-bold" href="../admin/paymentType.php">付款方式管理</a>
-            <a class="p-2 text-dark font-weight-bold" href="#">商品管理</a>
-            <a class="p-2 text-dark font-weight-bold" href="#">新增商品</a>
+            <a class="p-2 text-dark font-weight-bold" href="../admin/admin.php">商品管理</a>
+            <a class="p-2 text-dark font-weight-bold" href="../admin/new.php">新增商品</a>
             <a class="p-2 text-dark font-weight-bold" href="../sophia/admin/orders.php">訂單一覽</a>
             <a class="p-2 text-dark font-weight-bold" href="./member.php">會員一覽</a>
             <!-- <a class="p-2 text-light font-weight-bold" href="">商品追蹤管理</a> -->
             <a class="p-2 text-dark font-weight-bold" href="../index.php">網站前台</a>
-            <a class="p-2 text-dark font-weight-bold" href="../logout.php?logout=1">登出</a>
         </div>
         <div>
            
