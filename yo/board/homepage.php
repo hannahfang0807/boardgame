@@ -17,6 +17,7 @@ require_once('../nav.php');
     <style>
         h2 {
             text-align: center;
+            text-shadow: 2px 2px 8px;
         }
 
         .mainBoard {
@@ -40,7 +41,7 @@ require_once('../nav.php');
 </head>
 
 <body>
-    <h2>留言版</h2>
+    <h2 class="my-3">揪團留言板</h2>
     <form method="POST" action="./newMessage.php">
         <div class="my-1" style="text-align: center;">
             <select name="storeId">
@@ -58,7 +59,7 @@ require_once('../nav.php');
             <br>
             <textarea class="mt-2" name="newMessage" cols="100" rows="3"></textarea>
             <br>
-            <input class="btn btn-warning" type="submit" name="smb" value="揪起來">
+            <input class="mt-2 btn btn-warning" type="submit" name="smb" value="揪起來">
         </div>
     </form>
     <hr>
@@ -119,7 +120,7 @@ require_once('../nav.php');
                         <textarea name="replyMessage" cols="100" rows="3"></textarea>
                         <input type="hidden" name="mesNum" value="<?php echo $arrMes[$i]['messageId'] ?>">
                         <br>
-                        <input class="btn btn-danger" type="submit" value="回覆留言">
+                        <input class="mt-2 btn btn-danger" type="submit" value="回覆留言">
                     </div>
                 </form>
             </div>
