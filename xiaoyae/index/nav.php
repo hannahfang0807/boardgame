@@ -1,6 +1,6 @@
 <nav class="d-flex align-items-center p-3 px-4 navbar navbar-dark bg-dark border-bottom shadow-sm">
         <h1 class="navbar-brand font-weight-bold my-0">
-            <a href="./index.php" class="text-warning">桌遊店-宇宙迷航</a>
+            <a href="../../index.php" class="text-warning">桌遊店-宇宙迷航</a>
         </h1>
         <div>
             <a class="p-2 text-light font-weight-bold" href="../../ma/itemList.php">商品一覽</a>
@@ -29,7 +29,7 @@
                 <a class="btn btn-warning my-0" href="../../login.php">登入</a>
             <?php } else { ?>
                 <span class="text-light"><?php echo $_SESSION["memberAccount"] ?> 您好</span>    
-                <a class="btn btn-warning my-0 ml-2" href="./logout.php">登出</a>
+                <a class="btn btn-warning my-0 ml-2" href="../../logout.php">登出</a>
                 <?php } ?>
         </div>
     </nav>
