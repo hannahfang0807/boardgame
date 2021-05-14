@@ -9,7 +9,8 @@
             <a class="p-2 text-dark font-weight-bold" href="../admin/new.php">新增商品</a>
             <a class="p-2 text-dark font-weight-bold" href="../sophia/admin/orders.php">訂單一覽</a>
             <a class="p-2 text-dark font-weight-bold" href="./member.php">會員一覽</a>
-            <a class="p-2 text-light font-weight-bold" href="../yo/discount/homepage.php">優惠券管理</a>
+            <a class="p-2 text-dark font-weight-bold" href="../xiaoyae/index/store/admin/admin.php">分店一覽</a>
+            <a class="p-2 text-dark font-weight-bold" href="../yo/discount/homepage.php">折價券管理</a>
             <a class="p-2 text-dark font-weight-bold" href="../index.php">網站前台</a>
         </div>
         <div>
@@ -19,3 +20,4 @@
 
         </div>
     </nav>
+
