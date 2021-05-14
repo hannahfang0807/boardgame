@@ -1,5 +1,8 @@
 <?php
+require_once('../checkSession.php');
 require_once('./db.inc.php');
+require_once('../nav.php');
+
 ?>
 
 <!DOCTYPE html>
@@ -79,7 +82,7 @@ require_once('./db.inc.php');
                     </div>
                 </div>
                 <div class="d-flex" style="align-items: center;">
-                    <div class="pr-3"><img width="120px" src="../images/<?php echo $arrMes[$i]['memberImg'] ?>" alt="會員大頭貼"></div>
+                    <div class="pr-3"><img width="120px" src="../../hannah/images/<?php echo $arrMes[$i]['memberImg'] ?>" alt="會員大頭貼"></div>
                     <p><?php echo $arrMes[$i]['content'] ?></p>
                 </div>
 
@@ -103,7 +106,7 @@ require_once('./db.inc.php');
                                 </div>
                             </div>
                             <div class="d-flex" style="align-items: center;">
-                                <div class="pr-3"><img width="120px" src="../images/<?php echo $arrRep[$j]['memberImg'] ?>" alt="會員大頭貼"></div>
+                                <div class="pr-3"><img width="120px" src="../../hannah/images/<?php echo $arrRep[$j]['memberImg'] ?>" alt="會員大頭貼"></div>
                                 <p><?php echo $arrRep[$j]['content'] ?></p>
                             </div>
                         </div>
