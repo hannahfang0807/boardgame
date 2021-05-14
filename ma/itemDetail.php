@@ -69,13 +69,14 @@ require_once("./tpl/func-getRecursiveCategoryIds.php");
                                 <form name="cartForm" id="cartForm" method="POST" action="../sophia/addCart.php">
                                     <label>數量: </label>
                                       <!-- 加的 -->
-                                    <input type="number" name="cartQty" value="1" maxlength="5" min="1" max="<?php echo $arrItem["itemQty"] ?>">
+                                    <input type="number" name="cartQty" value="1" maxlength="5" min="1" max="<?php echo $arr[0]["itemQty"] ?>">
                                     <!-- <input type="text" name="cartQty" id="cartQty" value="1" maxlength="5" style="width:50px"> -->
                                     <br>
+                                    
                                     <div class="my-2">
                                         <!-- <button type="button" class="btn btn-primary btn-lg" id="btn_addCart" data-item-id="<?php echo $_GET['itemId'] ?>">加入購物車</button> -->
                                         <input type="submit" class="btn btn-primary btn-lg" name="smb" value="加入購物車">
-                                        <button type="button" class="btn btn-info btn-lg" id="btn_addItemTracking" data-item-id="<?php echo $_GET['itemId'] ?>">追蹤此商品</button>
+                                        
                                         <input type="hidden" name="itemId" id="itemId" value="<?php echo $_GET['itemId'] ?>">
                                     </div>
                                 </form>

@@ -89,15 +89,15 @@ require_once('../db.inc.php'); //引用資料庫連線
                 ?>
                     <p>商品名稱: <?php echo $arrItemList[$j]["itemName"] ?></p>
                     <p>商品種類: <?php echo $arrItemList[$j]["categoryName"] ?></p>
-                    <p>單價: <?php echo $arrItemList[$j]["checkPrice"] ?></p>
+                    <p>單價: $<?php echo $arrItemList[$j]["checkPrice"] ?></p>
                     <p>數量: <?php echo $arrItemList[$j]["checkQty"] ?></p>
-                    <p>小計: <?php echo $arrItemList[$j]["checkSubtotal"] ?></p>
+                    <p>小計: $<?php echo $arrItemList[$j]["checkSubtotal"] ?></p>
                     <br />
                 <?php
                     }
                 }
                 ?>
-                 <td class="border"><?php echo $total ?></td>
+                 <td class="border">$<?php echo $total ?></td>
                 </td>
                 <td class="border"><?php echo $arrOrders[$i]["created_at"] ?></td>
                
