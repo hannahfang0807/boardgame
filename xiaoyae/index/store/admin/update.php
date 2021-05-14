@@ -29,8 +29,8 @@ if ($_FILES['storePhoto']['error'] === 0) {
     // 建立完整名稱
     $imgName = $imgDateTime . '.' . $extension;
     // 暫存資料夾 >> 實際存放資料夾
-    $isSuccess = move_uploaded_file($_FILES['storePhoto']['tmp_name'], "../storeImages/{$imgName}");
-
+    $isSuccess = move_uploaded_file($_FILES['storePhoto']['tmp_name'], "./storeImages/{$imgName}");
+    
     if ($isSuccess) {
         // 先查出特定 id 的照片檔案名稱
         $sqlGetImg = 'SELECT `storePhoto` FROM `store` WHERE `storeId` = ?';
@@ -51,10 +51,10 @@ if ($_FILES['storePhoto']['error'] === 0) {
             // 若 storePhoto 裡面不為空值，代表曾經上傳過照片
             if ($arrImg['storePhoto'] !== NULL) {
                 // 刪除舊的檔案
-                @unlink('../storeImages/' . $arrImg);
+                @unlink('./storeImages/' . $arrImg);
             }
         // 接上面的 sql 語句字串
-        $sql .= ', `storePhoto` = ?';
+        $sql .= ', `storePhoto` = ? ';
         // 只對 imgName 資料繫結
         $arrParam[] = $imgName;
         }

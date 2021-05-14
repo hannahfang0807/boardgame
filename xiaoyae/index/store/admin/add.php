@@ -26,7 +26,7 @@ if ($_FILES['storePhoto']['error'] === 0) {
     // 建立完整名稱
     $imgName = $imgDateTime . '.' . $extension;
     // 暫存資料夾 >> 實際存放資料夾
-    $isSuccess = move_uploaded_file($_FILES['storePhoto']['tmp_name'], '../storeImages/' . $imgName);
+    $isSuccess = move_uploaded_file($_FILES['storePhoto']['tmp_name'], './storeImages/' . $imgName);
     // 圖片上傳失敗
     if (!$isSuccess) {
         header('Refresh: 3; url = ./admin.php');
