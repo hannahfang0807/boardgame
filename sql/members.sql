@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2021-05-12 11:19:26
+-- 產生時間： 2021-05-14 03:55:42
 -- 伺服器版本： 10.4.18-MariaDB
 -- PHP 版本： 8.0.3
 
@@ -48,9 +48,9 @@ CREATE TABLE `members` (
 --
 
 INSERT INTO `members` (`memberId`, `memberAccount`, `memberPwd`, `memberName`, `memberNickname`, `memberGender`, `memberEmail`, `memberPhone`, `memberImg`, `memberBirthday`, `memberAddress`, `created_at`, `updated_at`) VALUES
-(1, 'hannah', '675dc611bafb0b7348dd3baf7e005b6916fb954d', '方漢娜', 'Hannah8', '女', 'hannah0807@gmail.com', '0988888888', '20210511101824.jpg', '2021-01-13', '台北市大安區和平東路二段106號9樓', '2021-05-11 16:18:24', '2021-05-11 16:18:24'),
+(1, 'hannah', '675dc611bafb0b7348dd3baf7e005b6916fb954d', '方漢娜', 'Hannah888', '男', 'hannah0807@gmail.com', '0988888888', '20210511101824.jpg', '2021-01-13', '台北市大安區和平東路二段106號9樓', '2021-05-13 15:53:41', '2021-05-13 15:53:41'),
 (2, 'rinn888', 'ce2cffb7c758775c971317bfd9e7af1cb87fb51d', '蔡志珊', '阿志', '男', 'asdfg1234@gmail.com', '0958982411', '20210511050618.jpg', '0000-00-00', '台北市萬華區西寧南路49號', '2021-05-11 15:11:26', '2021-05-11 15:11:26'),
-(3, 'hahaha999', '7fed65b07bf4ca955a2870efa3ecda62abe1615c', '王寶旺', '旺旺', '男', 'kioo84@gmail.com', '0958982411', '20210511050353.jpg', '1991-12-20', '台北市信義區中坡北路195號', '2021-05-11 15:11:28', '2021-05-11 15:11:28'),
+(3, 'hahaha999', '7fed65b07bf4ca955a2870efa3ecda62abe1615c', '王寶旺', '旺旺', '男', 'kioo84@gmail.com', '0958982411', '20210513102905.jpg', '1991-12-20', '台北市信義區中坡北路195號', '2021-05-13 16:29:05', '2021-05-13 16:29:05'),
 (4, 'apple0918', 'c46056d49b3657abd1ba90e0d2af444ee44dc7a2', '張佩璇', '佩璇', '女', 'apple0918@gmail.com', '0928474076', '20210511101842.jpg', '1995-08-06', '新北市土城區中央路三段254號', '2021-05-11 16:18:43', '2021-05-11 16:18:43'),
 (5, 'bssardino123', 'aec5064fff3a6ebe2137ee3875f7ebdc7249864f', '陳羿水', '水水', '女', 'bssardino123@gmail.com', '091564876', '20210511051016.jpg', '1999-01-03', '台中市西屯區國安一路268號', '2021-05-11 15:11:32', '2021-05-11 15:11:32'),
 (6, 'karniola0910', '7cd474797f716639348c0d389702f452fe45e546', '夏佩君', '夏夏', '女', 'karniola0910@gmail.com', '0929748837', '20210511051219.jpeg', '2001-09-10', '桃園市楊梅區高上路一段254號', '2021-05-11 15:11:34', '2021-05-11 15:11:34'),
@@ -76,7 +76,7 @@ ALTER TABLE `members`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `members`
 --
 ALTER TABLE `members`
-  MODIFY `memberId` int(11) NOT NULL AUTO_INCREMENT COMMENT '會員編號', AUTO_INCREMENT=14;
+  MODIFY `memberId` int(11) NOT NULL AUTO_INCREMENT COMMENT '會員編號', AUTO_INCREMENT=15;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
