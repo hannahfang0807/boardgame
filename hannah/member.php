@@ -10,7 +10,7 @@ $stmtTotal = $pdo->query($sqlTotal);
 $arrTotal = $stmtTotal->fetchAll()[0];
 $total = $arrTotal['count'];
 
-$numPerPage = 5;
+$numPerPage = 10;
 $totalPages = ceil($total/$numPerPage);
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 $page = $page < 1 ? 1 : $page;
