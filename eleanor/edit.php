@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,11 +11,13 @@
         }
     </style>
 </head>
-<body>
+<body> -->
     
 <?php
   require_once('../db.inc.php');
-
+  
+  require_once('../html-header.php');
+  require_once('../nav.php');
 // print_r( $_POST['chk']);
 
 $sql = "SELECT * FROM `reservations` 
@@ -30,7 +32,7 @@ if($stmt->rowCount() > 0) {
 
 <form action="./update.php" method="POST">
 
-<table>
+<table class="table table-bordered">
 <thead>
     <tr>
       <th>預約日期</th>
@@ -113,10 +115,15 @@ if($stmt->rowCount() > 0) {
 
 </table>
 <input type="hidden" name="reservationId" value="<?php echo (int)$_GET['reservationId'] ?>">
+<div class="d-flex justify-center">
+<button class="mx-auto btn btn-primary">確認修改</button>
 
-<button>確認修改</button>
+</div>
 </form>
-<a href="./reservations.php">回上頁</a>
+<div class="d-flex justify-center">
+<button class="mx-auto"><a href="./reservations.php">回上頁</a> </button> 
+
+</div>
 
 
 </body>
