@@ -1,5 +1,8 @@
 <?php
 require_once '../../db.inc.php';
+require_once '../../../../admin/checkAdmin.php';
+require_once './html-header.php';
+require_once './html-footer.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,10 +22,11 @@ require_once '../../db.inc.php';
 <body>
     <?php require_once './title.php' ?>
     <hr>
-    <form action="update.php" name="myForm" method="POST" enctype="multipart/form-data">
-        <table class="border">
-            <thead>
-                <tr>
+    <h3 class="text-center">修改分店</h3>
+    <form action="./update.php" name="myForm" method="POST" enctype="multipart/form-data">
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr class="text-center">
                     <th class="border">分店名稱</th>
                     <th class="border">分店市話</th>
                     <th class="border">分店電話</th>
@@ -46,7 +50,7 @@ require_once '../../db.inc.php';
                 if ($stmt->rowCount() > 0) {
                     $arr = $stmt->fetchAll()[0];
                 ?>
-                    <tr>
+                    <tr class="text-center">
                         <td class="border">
                             <input type="text" name="storeName" value="<?php echo $arr['storeName'] ?>" maxlength="20">
                         </td>
@@ -63,7 +67,7 @@ require_once '../../db.inc.php';
                             <input type="text" name="address" value="<?php echo $arr['address'] ?>">
                         </td>
                         <td class="border">
-                            <img width="150px" src="./storeImages/<?php echo $arr['storePhoto'] ?>"><br>
+                            <img width="150px" src="./storeImages/<?php echo $arr['storePhoto'] ?>">
                             <input type="file" name="storePhoto" value="">
                         </td>
                         <td class="border">
@@ -85,7 +89,7 @@ require_once '../../db.inc.php';
                 ?>
             </tbody>
             <tfoot>
-                <tr>
+                <tr class="text-center">
                     <td class="border" colspan="10"><input type="submit" name="sub" value="更新"></td>
                 </tr>
             </tfoot>
