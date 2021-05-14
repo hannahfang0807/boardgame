@@ -1,6 +1,7 @@
 <?php
 // require_once './checkSession.php';
 require_once '../../db.inc.php';
+require_once '../../../../checkSession.php';
 
 $total = $pdo->query('SELECT count(1) AS `count` FROM `store`')->fetchAll()[0]['count'];
 $numPerPages = 5;

@@ -14,7 +14,7 @@
 <body>
     
 <?php
-require_once('./db.connect.php');
+  require_once('../db.inc.php');
 
 // print_r( $_POST['chk']);
 

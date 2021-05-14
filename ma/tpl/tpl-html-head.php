@@ -11,5 +11,21 @@
     <link rel="stylesheet" href="../css/carousel.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/footer.css">
+    <style>
+        .button:hover .hover {
+            display: block;
+        }
+
+        .hover {
+            display: none;
+            background-color: #ffb2b2;
+        }
+
+        /* body {
+            background-image: url("../img/");
+            background-repeat: no-repeat;
+            background-color: white;
+        } */
+    </style>
 </head>
 <body class="d-flex flex-column h-100">

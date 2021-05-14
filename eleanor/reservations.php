@@ -24,7 +24,7 @@ require_once('./checkSession.php')
 
 
 <?php
-  require_once('./db.connect.php');
+  require_once('../db.inc.php');
   $sql = "SELECT `memberName`, `memberId`, `memberImg`  FROM `members` WHERE `memberAccount` = ?";  //memberAccount must be unique
   $arrParam = array($_SESSION['memberAccount']);
 
@@ -104,7 +104,7 @@ require_once('./checkSession.php')
       <a href="#" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">去商城查看最新商品</a>
       <p class="mt-2 text-gray-500">即日起實施入場消費實名制登記，請各位貴賓配合填寫。相關規範與注意事項，謹遵照衛服部疾管署之【COVID-19(武漢肺炎)防疫新生活運動：實聯制措施指引】辦理</p>
 
-        <a href="./logout.php?logout=1"><button class="ml-auto w-20 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        <a href="../logout.php?logout=1"><button class="ml-auto w-20 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
           登出
         </button></a>
 
@@ -202,8 +202,8 @@ require_once('./checkSession.php')
     <hr>
 
     <?php 
-        require_once('./db.connect.php');
-        $sql = "SELECT * FROM `reservations` WHERE `memberId` = ? ORDER BY date ASC";
+  require_once('../db.inc.php');
+  $sql = "SELECT * FROM `reservations` WHERE `memberId` = ? ORDER BY date ASC";
         $arrParam = array($memberId); //[42]
         $res = $pdo->prepare($sql);
         $res->execute($arrParam);
@@ -241,12 +241,7 @@ require_once('./checkSession.php')
     
     <?php
     
-    // require_once('./db.connect.php');
-    // $sql = "SELECT * FROM `reservations` ORDER BY date ASC";
-    // $res = $pdo->query($sql);
-    
-    // if ($res->rowCount() > 0){
-    //     $arr = $res->fetchAll();
+
         for ($i = 0; $i < count($arr); $i ++) {
     
     ?>
