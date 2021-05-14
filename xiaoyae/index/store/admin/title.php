@@ -6,7 +6,6 @@
         <a class="p-2 text-dark font-weight-bold" href="../../../../admin/category.php">遊戲類別管理</a>
         <a class="p-2 text-dark font-weight-bold" href="../../../../admin/paymentType.php">付款方式管理</a>
         <a class="p-2 text-dark font-weight-bold" href="../../../../admin/admin.php">商品管理</a>
-        <a class="p-2 text-dark font-weight-bold" href="../../../../admin/new.php">新增商品</a>
         <a class="p-2 text-dark font-weight-bold" href="../../../../sophia/admin/orders.php">訂單一覽</a>
         <a class="p-2 text-dark font-weight-bold" href="../../../../hannah/member.php">會員一覽</a>
         <a class="p-2 text-dark font-weight-bold" href="./admin.php">分店一覽</a>
