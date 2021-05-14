@@ -3,6 +3,7 @@ session_start();
 require_once('./db.inc.php');
 require_once('./html-header.php'); 
 require_once('./nav.php'); 
+
 ?>
 
 <form name="myForm" method="POST" action="./deleteOrder.php">
@@ -53,7 +54,7 @@ require_once('./nav.php');
                                 for ($i = 0; $i < count($arrOrders); $i++) {
                             ?>
                                     <tr>
-                                        <th scope="row" class="border align-middle "><?php echo $arrOrders[$i]["orderId"] ?></th>
+                                        <th scope="row" class="border align-middle "><?php echo $arrOrders[$i]["orderId"] ?>
                                         <td class="border align-middle"><?php echo $arrOrders[$i]["created_at"] ?></td>
                                         <td class="border align-middle"><?php echo $arrOrders[$i]["paymentTypeName"] ?></td>
                                         <td class="border align-middle">
@@ -83,6 +84,7 @@ require_once('./nav.php');
                                                     $order = $arrItemList[$j]["orderId"];
 
                                             ?>
+                                            
                                                     <div class="jumbotron">
                                                         <p>商品名稱: <?php echo $arrItemList[$j]["itemName"] ?></p>
                                                         <p>商品種類: <?php echo $arrItemList[$j]["categoryName"] ?></p>
@@ -95,7 +97,8 @@ require_once('./nav.php');
                                             }
                                             ?>
                                         </td>
-                                        <td class="border align-middle"><?php echo $total ?></td>
+                                        <td class="border align-middle">$<?php echo $total ?></td>
+                                       
                                     </tr>
                             <?php
                                 }

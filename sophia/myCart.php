@@ -4,6 +4,7 @@ require_once('./db.inc.php');
 require_once('./html-header.php'); 
 require_once('./nav.php'); 
 
+
 ?>
 <form name="myForm" method="POST" action="./addOrder.php">
 
@@ -52,8 +53,8 @@ img.payment_type_icon{
                                 <th scope="col" class="border-0 bg-light">
                                     <div class="py-2 text-uppercase">價格</div>
                                 </th>
-                                <th scope="col" class="border-0 bg-light">
-                                    <div class="py-2 text-uppercase">數量</div>
+                                <th scope="col " class="border-0 bg-light ">
+                                    <div class="py-2 pl-5">數量</div>
                                 </th>
                                 <th scope="col" class="border-0 bg-light">
                                     <div class="py-2 text-uppercase">小計</div>
@@ -106,7 +107,7 @@ img.payment_type_icon{
                             <tr>
                                 <th scope="row" class="border-0">
                                     <div class="p-2">
-                                        <img src="./images/items/<?php echo $arr[$i]["itemImg"] ?>" alt="" width="70" class="img-fluid rounded shadow-sm">
+                                        <img src="../ma/images/items/<?php echo $arr[$i]["itemImg"] ?>" alt="" width="70" class="img-fluid rounded shadow-sm">
                                         <div class="ml-3 d-inline-block align-middle">
                                             <h5 class="mb-0"><a href="#"class="text-dark d-inline-block align-middle"><?php echo $arr[$i]["itemName"] ?></a></h5>
                                             <span class="text-muted font-weight-normal font-italic d-block">Category: <?php echo $arr[$i]["categoryName"] ?></span>
@@ -114,11 +115,12 @@ img.payment_type_icon{
                                     </div>
                                 </th>
                                 <td class="border-0 align-middle"><strong>$<?php echo $arr[$i]["itemPrice"] ?></strong></td>
-                                <td class="border-0 align-middle">
-                                    <input class="form-control" type="text" placeholder="Readonly input here..." aria-label="readonly input example" readonly name="cartQty[]" value="<?php echo $arr[$i]["cartQty"] ?>" maxlength="3">
-                                </td>
-                                <td class="border-0 align-middle">
-                                    <input class="form-control" type="text" placeholder="Readonly input here..." aria-label="readonly input example" readonly name="subtotal[]" value="<?php echo ($arr[$i]["itemPrice"] * $arr[$i]["cartQty"]) ?>" maxlength="10">
+                                <td class="border-0  align-middle pl-5">
+                                    <input class="border-0 align-middle" name="cartQty[]" value="<?php echo $arr[$i]["cartQty"] ?>" maxlength="3">
+
+                                <td class="border-0 align-middle  ">$
+                                <input class="border-0 align-middle" name="subtotal[]" value="<?php echo ($arr[$i]["itemPrice"] * $arr[$i]["cartQty"]) ?>" maxlength="3">
+                                   
                                 </td>
                                 <td class="border-0 align-middle"><a href="./deleteCart.php?idx=<?php echo $i ?>" class="text-dark">刪除</a></td>
                             </tr>
@@ -132,8 +134,9 @@ img.payment_type_icon{
                     </table>
                 </div>
             </div>
-            <p>付款方式：</p>
+          
             <?php if( isset($_SESSION["cart"]) && count($_SESSION["cart"]) > 0 ){ ?>
+                <p>付款方式:</p>
             <div class="row d-flex justify-content-start pl-3 pr-3 pb-3">
                 <?php
                 $sqlPaymentType = "SELECT `paymentTypeId`, `paymentTypeName`, `paymentTypeImg`
@@ -146,7 +149,7 @@ img.payment_type_icon{
                     for($j = 0; $j < count($arrPaymentType); $j++) {
                 ?>
                
-                <div class="col-3">
+                <div class="col-6 pb-2">
                    
                     <input type="radio" name="paymentTypeId" id="paymentTypeId" value="<?php echo $arrPaymentType[$j]['paymentTypeId'] ?>">
                     <?php echo $arrPaymentType[$j]['paymentTypeName'] ?>
@@ -158,7 +161,7 @@ img.payment_type_icon{
                 ?>
             </div>
             <div class="row d-flex justify-content-end pl-3 pr-3 pb-3">
-                <h4>目前總額: <?php echo $total ?></h4>
+                <h4>目前總額: ＄<?php echo  $total ?></h4>
             </div>
             <div class="row d-flex justify-content-end pl-3 pr-3 pb-3">
                 <input class="btn btn-primary btn-lg" type="submit" name="smb" value="送出">

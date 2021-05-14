@@ -11,7 +11,7 @@ $objResponse['info'] = "加入購物車失敗";
 $objResponse['cartItemNum'] = 0;
 
 if( !isset($_POST['cartQty']) || !isset($_POST['itemId']) ){
-    header("Refresh: 3; url=../ma/itemList.php");
+    header("Refresh: 1; url=../ma/itemList.php");
     $objResponse['info'] = "資料傳遞有誤";
     echo json_encode($objResponse, JSON_UNESCAPED_UNICODE);
     exit();

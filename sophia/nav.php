@@ -7,6 +7,7 @@
             <a class="p-2 text-light font-weight-bold" href="../eleanor/reservations.php">預約</a>
             <a class="p-2 text-light font-weight-bold" href="../yo/board/homepage.php">揪團留言板</a>
             <a class="p-2 text-light font-weight-bold" href="../xiaoyae/index/index.php">分店資訊</a>
+            
         </div>
         <div>
             <a class="p-2 text-light " href="./myCart.php">
@@ -21,6 +22,7 @@
                 ?>
                 </span>)
             </a>
+            <a class="p-2 text-light font-weight-bold" href="./order.php">訂單資訊</a>
             <?php if(isset($_SESSION["memberAccount"])) { ?>
                 <!-- <a class="p-2 text-light" href="./hannah/member.php">會員中心</a> -->
             <?php } ?>
